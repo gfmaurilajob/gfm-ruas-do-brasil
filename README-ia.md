@@ -1,4 +1,4 @@
-# GTA Brasil — Estrutura de desenvolvimento orientado por agentes de IA
+# GFM — Ruas do Brasil — Estrutura de desenvolvimento orientado por agentes de IA
 
 Template documental para o desenvolvimento futuro de um jogo independente de mundo
 aberto brasileiro, realista, inicialmente single-player, com área inicial inspirada
@@ -48,8 +48,15 @@ sem alterar a origem. O método e as skills provêm do pacote VEYLOQ v1.0
 (Superpowers/Jesse Vincent, VoltAgent, Muratcan Koylan — licenças MIT). Ver
 `ATTRIBUTION.md` e `docs/referencias/veyloq/README.md`.
 
-## Homologação
+## Homologação e limitações conhecidas
 
-A homologação operacional das ferramentas é parcial e baseada em evidência.
-Consulte `reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt`. Não declarar
-compatibilidade operacional não testada.
+A infraestrutura documental está consolidada e validada localmente. A homologação
+operacional é parcial: depende de execução real das ferramentas e de autenticação
+válida. Não declarar compatibilidade não testada.
+
+Evidências, classificações e pendências externas:
+`reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.
+
+Limitações: GitHub (conta suspensa/403) bloqueia publicação; Claude Code não está
+instalado; descoberta de skills/comandos do OpenCode depende de sessão operacional.
+Fase atual: infraestrutura de IA e planejamento. Não há jogo nem protótipo funcional.

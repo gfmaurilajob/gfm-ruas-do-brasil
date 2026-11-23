@@ -1,4 +1,4 @@
-# AGENTS.md — GTA Brasil
+# AGENTS.md — GFM — Ruas do Brasil
 
 Idioma oficial: português brasileiro (pt-BR). Código, comandos, nomes de arquivos e
 termos técnicos permanecem como estão.
@@ -72,3 +72,8 @@ sem evidência operacional. Modelo: `templates/test-plans/test-report-template.m
 - Governança: `governance/` · Arquitetura: `docs/architecture/` · Templates: `templates/`
 - Referência VEYLOQ (monolito original preservado): `docs/referencias/veyloq/`
 - Créditos/licenças: `ATTRIBUTION.md` · Relatórios: `reports/`
+
+## Estado da infraestrutura
+Fase de infraestrutura de IA e planejamento. Não existe jogo, protótipo, projeto Unreal,
+código C++, Blueprint, mapa ou asset. Homologação, limitações e próximas etapas:
+`reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.

@@ -11,5 +11,5 @@ Diretórios documentais não ativam agentes/comandos por si só; o formato nativ
 Verifique sintaxe e disponibilidade na versão utilizada. A fase atual é exclusivamente
 documental; não implementar o jogo sem autorização específica.
 
-A evidência de carregamento/descoberta nesta sessão está em
-`reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt`.
+Evidências e estado de homologação:
+`reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.

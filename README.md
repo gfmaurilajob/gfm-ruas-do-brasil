@@ -132,6 +132,14 @@ Ainda não foram iniciados:
 
 A implementação dessas funcionalidades dependerá das próximas definições do projeto.
 
+### Estado da homologação
+
+A infraestrutura de IA está consolidada, com validação estrutural local via
+`.github/workflows/validate-structure.yml`. A homologação operacional é parcial e
+baseada em evidências reais; publicação no GitHub pode estar bloqueada por
+autenticação. Detalhes em `reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.
+Este projeto ainda não possui jogo, protótipo funcional ou implementação de gameplay.
+
 ## 🗺️ Roadmap
 
 | Fase | Objetivo | Situação |
@@ -175,7 +183,7 @@ Consulte `ATTRIBUTION.md` para informações sobre os componentes de terceiros i
 
 Projeto independente desenvolvido com apoio de ferramentas e agentes de inteligência artificial.
 
-**Repositório previsto:** `gfmaurila/gfm-ruas-do-brasil`
+**Repositório:** `gfmaurilajob/gfm-ruas-do-brasil`
 
 ---
 

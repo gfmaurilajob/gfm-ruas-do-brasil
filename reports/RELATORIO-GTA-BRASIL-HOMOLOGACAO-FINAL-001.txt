@@ -1,0 +1,255 @@
+================================================================================
+RELATÓRIO — GFM — RUAS DO BRASIL — HOMOLOGAÇÃO FINAL DA ESTRUTURA DE IA
+ID: RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001
+================================================================================
+Data: 2026-11-23
+Idioma: pt-BR
+Executor: agente ORCHESTRATOR (coordenação documental)
+
+--------------------------------------------------------------------------------
+1. IDENTIFICAÇÃO DO PROJETO
+--------------------------------------------------------------------------------
+Diretório: C:\Work\dev\veyloq\GTABrasil
+Repositório: https://github.com/gfmaurilajob/gfm-ruas-do-brasil.git
+Branch: main
+HEAD observado na auditoria: 21ef2c7 (inicio)
+Referência histórica: reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt
+Fase: infraestrutura de IA e planejamento. Não existe jogo, protótipo, projeto
+Unreal, código C++, Blueprint, mapa, personagem ou asset nesta execução.
+
+--------------------------------------------------------------------------------
+2. ESTRUTURA ENCONTRADA
+--------------------------------------------------------------------------------
+Agentes OpenCode: 12 arquivos em .opencode/agents/*.md:
+  ai-engineer, architect, devops-build, documentation, gameplay-designer,
+  implementer, orchestrator, performance-engineer, reviewer, security-reviewer,
+  tester-qa, world-designer.
+Comandos OpenCode: 9 arquivos em .opencode/commands/*.md:
+  analisar-requisitos, auditoria-qualidade, criar-spec, gerar-relatorio-ciclo,
+  planejar-funcionalidade, revisar-arquitetura, revisar-seguranca,
+  validar-documentacao, verificar-prontidao.
+Skills: 14 diretórios em .agents/skills/, todos com SKILL.md:
+  brainstorming, context-degradation, context-fundamentals, context-optimization,
+  executing-plans, finishing-a-development-branch, receiving-code-review,
+  requesting-code-review, subagent-driven-development, systematic-debugging,
+  test-driven-development, using-git-worktrees, verification-before-completion,
+  writing-plans.
+AGENTS.md: 4.796 bytes (conciso, dentro do limite de 5 KB).
+Pontos de entrada: CLAUDE.md, .github/copilot-instructions.md, .codex/README.md,
+  .claude/README.md, README.md, README-ia.md, .opencode/README.md.
+Governança: governance/agent-policies/fluxo-obrigatorio.md, quality-gates,
+  security-baseline, dependency-policy e políticas complementares.
+Documentação: docs/architecture, docs/tasks, docs/security, docs/testing,
+  docs/specs, docs/devops e templates/ (modelos de SPEC, ADR, plano, testes).
+Licenças: 40 arquivos LICENSE* e ATTRIBUTION.md (60.151 bytes) preservados.
+Relatórios: RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt e este relatório.
+Git: remoto origin correto; branch main; fsck sem erros na auditoria.
+GitHub Actions: nenhum workflow existente antes desta execução.
+
+--------------------------------------------------------------------------------
+3. CORREÇÕES EXECUTADAS
+--------------------------------------------------------------------------------
+- AGENTS.md: título corrigido de "GTA Brasil" para "GFM — Ruas do Brasil" e
+  acrescentada seção "Estado da infraestrutura" com referência a este relatório.
+- README-ia.md: título corrigido para "GFM — Ruas do Brasil"; seção de homologação
+  reescrita com limitações reais e referência a este relatório.
+- README.md: remoto corrigido de `gfmaurila/gfm-ruas-do-brasil` para
+  `gfmaurilajob/gfm-ruas-do-brasil`; acrescentada seção "Estado da homologação".
+- .opencode/README.md, .codex/README.md, .github/copilot-instructions.md,
+  CLAUDE.md e .claude/README.md: passaram a apontar para este relatório.
+- Criados `.github/workflows/validate-structure.yml` e
+  `.github/scripts/validate-structure.ps1`.
+- Nenhum arquivo foi apagado. Nenhum conteúdo de skill de terceiros foi alterado.
+- Nenhuma dependência foi instalada. Nenhum código do jogo foi criado.
+- Observação de histórico: os commits 68092e2 e 174208c, produzidos em execuções
+  anteriores, não estão mais disponíveis no histórico atual. O histórico foi
+  reescrito por processo externo; esta execução preservou fdcf989 -> 21ef2c7 e
+  não realizou reset, clean, amend, force push ou recriação de .git.
+
+--------------------------------------------------------------------------------
+4. AGENTES HOMOLOGADOS
+--------------------------------------------------------------------------------
+Classificação: HOMOLOGADO COM RESSALVAS.
+Evidência estrutural: 12/12 com frontmatter `description` e `mode`; shell negado
+em 12/12; IMPLEMENTER com edição negada; edição permitida apenas em documentos
+.md para ORCHESTRATOR/DOCUMENTATION, com proteção de docs/referencias/** e
+ATTRIBUTION.md.
+Evidência operacional: `opencode agent list` reconheceu 12/12 papéis, exibindo
+modos `subagent` e `orchestrator (all)`.
+Ressalva: acionamento individual de cada subagente em tarefa real não executado.
+
+--------------------------------------------------------------------------------
+5. COMANDOS HOMOLOGADOS
+--------------------------------------------------------------------------------
+Classificação: HOMOLOGADO COM RESSALVAS.
+Evidência estrutural: 9/9 com frontmatter `description` e placeholder `$ARGUMENTS`.
+Todos são documentais e não destrutivos; nenhum contém scaffolding web, migração
+de banco ou geração de código de jogo.
+Ressalva: a CLI do OpenCode não expõe um comando dedicated para listar comandos
+nativos; o reconhecimento foi verificado por estrutura e por tarefa documental.
+
+--------------------------------------------------------------------------------
+6. SKILLS VERIFICADAS
+--------------------------------------------------------------------------------
+Classificação: HOMOLOGADO COM RESSALVAS.
+Evidência: 14/14 diretórios com SKILL.md, `name` e `description`; 0 referências
+internas ausentes em validação anterior; conteúdo original preservado.
+Tarefa documental via `opencode run` listou 14 skills por sistema de arquivos.
+Ressalva: a ferramenta Glob nativa do OpenCode retornou 0 matches para
+`.agents/skills/*` e `.opencode/*` na mesma sessão, embora o shell tenha listado
+os diretórios corretamente. Catálogo operacional de skills/config nativo depende
+de verificação em sessão dedicada.
+
+--------------------------------------------------------------------------------
+7. CODEX CLI
+--------------------------------------------------------------------------------
+Classificação: HOMOLOGADO COM RESSALVAS.
+Versão: codex-cli 0.171.0.
+`codex doctor`: instalação consistente, runtime npm íntegro, workdir com espaço
+suficiente, pt-BR detectado.
+`codex exec`: EXIT=0; workdir reportado como C:\Work\dev\veyloq\GTABrasil; sandbox
+read-only; respondeu "12 agentes, 9 comandos, 14 skills".
+Leitura de AGENTS.md confirmada: ao ser perguntado sobre a primeira linha,
+respondeu exatamente `AGENTS.md — GFM — Ruas do Brasil`.
+Ressalvas: aviso de configuração local não confiável (project config desativada)
+e erro não crítico de MCP Postman (`AuthRequired`), sem impacto na tarefa.
+
+--------------------------------------------------------------------------------
+8. OPENCODE
+--------------------------------------------------------------------------------
+Classificação: HOMOLOGADO COM RESSALVAS.
+Versão: 1.19.0.
+Inicialização: `opencode --version` e `opencode --help` executados com sucesso.
+Reconhecimento de agentes: `opencode agent list` listou 12/12.
+Tarefa documental: `opencode run` com prompt somente leitura retornou EXIT=0,
+exibiu "Read AGENTS.md" e listou 12 agentes, 9 comandos e 14 skills.
+Ressalva: Glob nativo retornou 0 matches para diretórios ocultos; reconhecimento
+de comandos/skills ocorreu via shell na tarefa, não via catálogo nativo explícito.
+Ao contrário da auditoria anterior, uma nova sessão CLI foi efetivamente executada.
+
+--------------------------------------------------------------------------------
+9. COPILOT CLI
+--------------------------------------------------------------------------------
+Classificação: BLOQUEADO.
+Versão: GitHub Copilot CLI 1.0.109.
+Presença no PATH confirmada.
+Teste não destrutivo com `-p` e ferramentas de leitura: EXIT=1.
+Erro exato: `Failed to fetch OAuth user login (403): GitHub returned: Sorry. Your
+account was suspended` e `Authentication token found but could not be validated`.
+Nenhuma credencial, remoto ou conta foi alterado; nenhuma tentativa de contorno.
+
+--------------------------------------------------------------------------------
+10. CLAUDE CODE
+--------------------------------------------------------------------------------
+Classificação: NÃO INSTALADO (ressalva opcional).
+`Get-Command claude` não retornou caminho no PATH.
+Compatibilidade documental mantida em `CLAUDE.md` e `.claude/README.md`, ambos
+apontando para `AGENTS.md` e para este relatório. Nenhuma instalação foi feita.
+
+--------------------------------------------------------------------------------
+11. GITHUB ACTIONS
+--------------------------------------------------------------------------------
+Workflow criado: `.github/workflows/validate-structure.yml`.
+Script criado: `.github/scripts/validate-structure.ps1`.
+Execução no GitHub: NÃO VERIFICADA (push bloqueado por conta suspensa/403).
+Validação local: executada antes da criação deste relatório; única falha foi
+"Ausente: reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt", corrigida pela
+criação deste arquivo. Resultado final registrado na seção 13.
+O workflow não depende de Unreal Engine, Docker nem serviços pagos; usa apenas
+`actions/checkout@v4` e `pwsh` em `windows-latest`.
+
+--------------------------------------------------------------------------------
+12. SEGURANÇA
+--------------------------------------------------------------------------------
+- `git fsck --no-progress`: sem erros na auditoria.
+- Scan de padrões de segredo (chaves privadas, AKIA, ghp_, AIza): 0 ocorrências.
+- Nenhum `.env`, `.pem`, `.key`, `.pfx` ou `id_rsa` identificado.
+- Nenhum `.uproject`, `.uasset`, `.umap`, `Binaries/`, `Intermediate/`, `Saved/`
+  ou código de jogo em `Source/` identificado.
+- `.gitignore` cobre segredos, diretórios Unreal e temporários.
+- 40 licenças e `ATTRIBUTION.md` preservadas; origem `C:\Work\dev\GTABrasil`
+  não foi alterada.
+- `git diff --cached --check` apresentou apenas trailing whitespace em arquivos
+  de referência de terceiros (skills de contexto e `leia.txt`). Não foram
+  modificados para preservar conteúdo original; trata-se de aviso não crítico.
+
+--------------------------------------------------------------------------------
+13. VALIDAÇÕES E RESULTADOS
+--------------------------------------------------------------------------------
+V1  Diretório e remoto .............................. APROVADO
+V2  Branch main e HEAD 21ef2c7 ...................... APROVADO
+V3  Integridade Git (fsck) ........................... APROVADO
+V4  12 agentes / 9 comandos / 14 skills ............. APROVADO
+V5  AGENTS.md 4.796 bytes e identidade GFM .......... APROVADO
+V6  Governança, docs, templates, licenças, reports .. APROVADO
+V7  Referências locais obrigatórias ................. APROVADO
+V8  Segredos/arquivos indevidos/código de jogo ...... APROVADO
+V9  Codex exec (12/9/14 + leitura de AGENTS.md) ..... APROVADO
+V10 OpenCode run e agent list ....................... APROVADO COM RESSALVA
+V11 Copilot prompt .................................. BLOQUEADO (403)
+V12 Claude Code ..................................... NÃO INSTALADO
+V13 Workflow + script locais ........................ APROVADO (EXIT=0)
+RESULTADO_LOCAL: "OK: validacao estrutural aprovada (agentes=12, comandos=9, skills=14)".
+
+--------------------------------------------------------------------------------
+14. ARQUIVOS CRIADOS E ALTERADOS
+--------------------------------------------------------------------------------
+Criados:
+  .github/workflows/validate-structure.yml
+  .github/scripts/validate-structure.ps1
+  reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt
+Alterados:
+  AGENTS.md
+  README.md
+  README-ia.md
+  CLAUDE.md
+  .claude/README.md
+  .codex/README.md
+  .github/copilot-instructions.md
+  .opencode/README.md
+Não alterados: agentes, comandos, skills, kits, bundles, licenças, ATTRIBUTION.md,
+documentação de referência VEYLOQ e relatório anterior.
+
+--------------------------------------------------------------------------------
+15. ERROS E RESSALVAS
+--------------------------------------------------------------------------------
+- Histórico Git reescrito externamente: 68092e2 e 174208c não disponíveis;
+  atual fdcf989 -> 21ef2c7. Nenhuma reescrita foi feita nesta execução.
+- GitHub: conta suspensa/403 em push e no Copilot CLI.
+- Claude Code ausente no PATH.
+- OpenCode Glob nativo não localizou diretórios ocultos; shell localizou.
+- Codex: aviso de configuração não confiável e erro MCP Postman não crítico.
+- `git diff --cached --check`: trailing whitespace em arquivos de terceiros.
+- Duplicatas aparentes README.md/README-ia.md/leia.txt são documentos distintos
+  e foram preservados; README-old-ia.md não está presente no workspace atual.
+
+--------------------------------------------------------------------------------
+16. PENDÊNCIAS EXTERNAS
+--------------------------------------------------------------------------------
+- Regularizar a conta GitHub/autenticação para publicar `main` e executar o
+  workflow na nuvem. Nenhuma credencial foi alterada nesta execução.
+- Decidir, com o usuário, o destino dos commits antigos perdidos por processo
+  externo; não reescrever histórico sem autorização.
+- Verificar em sessão operacional dedicada o catálogo nativo de comandos e skills
+  do OpenCode além do reconhecimento por arquivos e por tarefa documental.
+- Opcional: instalar/homologar Claude Code e retestar Copilot após regularização.
+- Nenhuma pendência impede o uso documental da estrutura; publicação remota
+  continua bloqueada por causa externa.
+
+--------------------------------------------------------------------------------
+17. CONCLUSÃO E RECOMENDAÇÃO DE PRÓXIMA FASE
+--------------------------------------------------------------------------------
+A estrutura inicial de IA está íntegra, corrigida, versionável localmente e
+validada por execução real de Codex e OpenCode. Classificação final:
+HOMOLOGADO COM RESSALVAS. Não é declarada homologação total porque Copilot está
+bloqueado, Claude Code não está instalado e o workflow ainda não foi executado
+no GitHub.
+
+Recomendação: seguir para a fase de planejamento técnico (requisitos,
+brainstorming, SPEC e revisão arquitetural), sem implementar o jogo. A
+implementação de C++, Blueprints, mapas, personagens, assets ou infraestrutura
+exige autorização específica posterior e aprovação do fluxo de governança.
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================

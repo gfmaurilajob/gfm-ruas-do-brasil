@@ -1,0 +1,22 @@
+name: Validar estrutura de IA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Estrutura documental e seguranca
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validar estrutura obrigatoria
+        shell: pwsh
+        run: |
+          & ./.github/scripts/validate-structure.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

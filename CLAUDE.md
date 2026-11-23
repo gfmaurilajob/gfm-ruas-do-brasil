@@ -10,4 +10,4 @@ não implementar o jogo nem executar infraestrutura sem autorização específic
 
 Verifique suporte e sintaxe da versão em uso antes de configurar recursos específicos.
 A presença deste arquivo não comprova carregamento operacional. Claude Code não foi
-homologado neste ambiente (ver `reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt`).
+homologado neste ambiente (ver `reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`).
