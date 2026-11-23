@@ -13,6 +13,7 @@ Diretório: C:\Work\dev\veyloq\GTABrasil
 Repositório: https://github.com/gfmaurilajob/gfm-ruas-do-brasil.git
 Branch: main
 HEAD observado na auditoria: 21ef2c7 (inicio)
+Commit de homologação: e02ea1e77cbcc8b72e57f53799ad052208757e78
 Referência histórica: reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt
 Fase: infraestrutura de IA e planejamento. Não existe jogo, protótipo, projeto
 Unreal, código C++, Blueprint, mapa, personagem ou asset nesta execução.
@@ -151,10 +152,10 @@ apontando para `AGENTS.md` e para este relatório. Nenhuma instalação foi feit
 --------------------------------------------------------------------------------
 Workflow criado: `.github/workflows/validate-structure.yml`.
 Script criado: `.github/scripts/validate-structure.ps1`.
-Execução no GitHub: NÃO VERIFICADA (push bloqueado por conta suspensa/403).
-Validação local: executada antes da criação deste relatório; única falha foi
-"Ausente: reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt", corrigida pela
-criação deste arquivo. Resultado final registrado na seção 13.
+Execução no GitHub: VERIFICADA E APROVADA. Run 45212339946, job
+"Estrutura documental e seguranca", conclusão `success`, etapa
+"Validar estrutura obrigatoria" aprovada em windows-latest, commit `e02ea1e`.
+Validação local: aprovada (EXIT=0), conforme seção 13.
 O workflow não depende de Unreal Engine, Docker nem serviços pagos; usa apenas
 `actions/checkout@v4` e `pwsh` em `windows-latest`.
 
@@ -190,6 +191,8 @@ V11 Copilot prompt .................................. BLOQUEADO (403)
 V12 Claude Code ..................................... NÃO INSTALADO
 V13 Workflow + script locais ........................ APROVADO (EXIT=0)
 RESULTADO_LOCAL: "OK: validacao estrutural aprovada (agentes=12, comandos=9, skills=14)".
+V14 Push origin/main ................................ APROVADO (commit e02ea1e)
+V15 Workflow no GitHub .............................. APROVADO (run 45212339946, job success)
 
 --------------------------------------------------------------------------------
 14. ARQUIVOS CRIADOS E ALTERADOS
@@ -215,7 +218,8 @@ documentação de referência VEYLOQ e relatório anterior.
 --------------------------------------------------------------------------------
 - Histórico Git reescrito externamente: 68092e2 e 174208c não disponíveis;
   atual fdcf989 -> 21ef2c7. Nenhuma reescrita foi feita nesta execução.
-- GitHub: conta suspensa/403 em push e no Copilot CLI.
+- GitHub: push de `main` concluído após regularização externa da conta; o Copilot
+  CLI permanece com 403/conta suspensa.
 - Claude Code ausente no PATH.
 - OpenCode Glob nativo não localizou diretórios ocultos; shell localizou.
 - Codex: aviso de configuração não confiável e erro MCP Postman não crítico.
@@ -226,8 +230,8 @@ documentação de referência VEYLOQ e relatório anterior.
 --------------------------------------------------------------------------------
 16. PENDÊNCIAS EXTERNAS
 --------------------------------------------------------------------------------
-- Regularizar a conta GitHub/autenticação para publicar `main` e executar o
-  workflow na nuvem. Nenhuma credencial foi alterada nesta execução.
+- RESOLVIDO DURANTE A EXECUÇÃO: publicação de `main` e execução do workflow na
+  nuvem concluídas. Nenhuma credencial foi alterada nesta execução.
 - Decidir, com o usuário, o destino dos commits antigos perdidos por processo
   externo; não reescrever histórico sem autorização.
 - Verificar em sessão operacional dedicada o catálogo nativo de comandos e skills
@@ -242,8 +246,8 @@ documentação de referência VEYLOQ e relatório anterior.
 A estrutura inicial de IA está íntegra, corrigida, versionável localmente e
 validada por execução real de Codex e OpenCode. Classificação final:
 HOMOLOGADO COM RESSALVAS. Não é declarada homologação total porque Copilot está
-bloqueado, Claude Code não está instalado e o workflow ainda não foi executado
-no GitHub.
+bloqueado e Claude Code não está instalado. O push e o workflow do GitHub foram
+concluídos com sucesso (run 45212339946).
 
 Recomendação: seguir para a fase de planejamento técnico (requisitos,
 brainstorming, SPEC e revisão arquitetural), sem implementar o jogo. A
