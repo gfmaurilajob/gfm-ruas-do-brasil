@@ -1,202 +1,130 @@
-# 🇧🇷 GFM — Ruas do Brasil
+# Ruas do Brasil
 
-**Um novo mundo aberto inspirado no Brasil.**
+Jogo independente de mundo aberto ambientado no Brasil, em fase de preparação técnica e documental.
 
-![Status](https://img.shields.io/badge/Status-Planejamento-blue)
-![Engine](https://img.shields.io/badge/Engine-Unreal%20Engine%205-black)
-![Linguagem](https://img.shields.io/badge/Linguagem-C%2B%2B%20%7C%20Blueprints-blue)
-![IA](https://img.shields.io/badge/Desenvolvimento-Agentes%20de%20IA-purple)
-![Plataforma](https://img.shields.io/badge/Plataforma-PC-lightgrey)
+## Objetivo
 
----
+Construir progressivamente um mundo aberto single-player com identidade própria, gráficos realistas e arquitetura modular. Estado inicial: Rio Grande do Sul; primeira cidade: Canoas. Não utilizar nomes, marcas, personagens, código ou assets proprietários da franquia GTA.
 
-## 🎮 Sobre o projeto
+## Tecnologias planejadas
 
-**GFM — Ruas do Brasil** é um projeto independente de jogo de mundo aberto, ambientado em um universo inspirado nas cidades, paisagens, na cultura e no cotidiano brasileiro.
+- Unreal Engine 5 — versão exata `PENDENTE DE DEFINIÇÃO`;
+- C++ nativo da Unreal para sistemas;
+- Blueprints para composição e autoria;
+- Git e GitHub para versionamento;
+- ferramentas de IA como apoio documental e, futuramente, operacional.
 
-A proposta é construir progressivamente um ambiente virtual que represente características do Brasil, combinando exploração, sistemas interativos e possibilidades de simulação.
+Nenhuma versão de engine, plugin, autenticação ou instalação é presumida. Docker, servidores e dependências extras exigem justificativa e autorização específica.
 
-O projeto tem como referência inicial uma região inspirada em **Canoas, no Rio Grande do Sul**, com possibilidade de expansão conforme as futuras definições de desenvolvimento.
+## Estado atual
 
-O desenvolvimento será orientado por uma arquitetura modular, documentação técnica e agentes especializados de inteligência artificial.
+Não existe jogo, protótipo, projeto Unreal, código C++, Blueprint, mapa, personagem, asset ou gameplay. A `SPEC-001` está **PROPOSTA — AGUARDANDO APROVAÇÃO**. O `MARCO-001` está apenas planejado. Toda implementação depende de SPEC aprovada, revisão arquitetural, versão da engine definida e autorização explícita.
 
-> **Importante:** o projeto está em fase de estruturação técnica. Mecânicas, sistemas, mapas e demais funcionalidades ainda serão definidos e aprovados antes da implementação.
+## Estrutura atual
 
-## 🎯 Objetivos
-
-- Desenvolver um jogo independente de mundo aberto com identidade brasileira.
-- Utilizar Unreal Engine 5 como tecnologia principal.
-- Adotar C++ e Blueprints conforme as necessidades técnicas.
-- Construir uma arquitetura modular, escalável e documentada.
-- Utilizar agentes de IA para apoiar planejamento, implementação, testes e revisão.
-- Estabelecer processos de qualidade, segurança e validação.
-- Desenvolver o projeto progressivamente, com decisões técnicas registradas.
-
-## 🛠️ Tecnologias previstas
-
-| Tecnologia | Finalidade |
+| Caminho | Finalidade |
 |---|---|
-| Unreal Engine 5 | Motor gráfico e desenvolvimento do jogo |
-| C++ | Programação de sistemas e funcionalidades |
-| Blueprints | Programação visual e integração de sistemas |
-| Git | Versionamento |
-| GitHub | Repositório e colaboração |
-| Codex CLI | Assistência ao desenvolvimento (principal) |
-| OpenCode | Orquestração e execução assistida (principal) |
-| GitHub Copilot CLI | Referência histórica; fora do escopo operacional atual |
-| Claude Code | Ferramenta complementar; integração documental preparada, não homologada |
+| `AGENTS.md`, `CLAUDE.md` | entrada principal da governança e ponteiro leve para Claude Code |
+| `docs/FONTE-UNICA-VERDADE.md` | índice canônico de governança, arquitetura, estado e relatórios |
+| `governance/politicas/` | fluxo, segurança, qualidade, Git, continuidade e integração VEYLOQ |
+| `governance/agentes-jogo/` | 12 papéis especializados canônicos |
+| `governance/historico/` | conteúdo recuperado do histórico, para referência |
+| `docs/arquitetura/` | arquitetura futura UE5 |
+| `docs/specs/` | SPEC-001 e MARCO-001 planejado |
+| `docs/decisoes/`, `docs/tarefas/`, `docs/estado/` | decisões, tarefas e estado verificável |
+| `templates/relatorios/` | modelos de relatório de continuidade |
+| `.agents/skills/`, `agents/`, `commands/`, `kits/`, `bundles/` | pacote VEYLOQ preservado |
+| `kits/veyloq/referencias/` | monólito original do VEYLOQ |
+| `.opencode/`, `.claude/`, `.codex/`, `.github/` | adaptadores e integrações documentais |
+| `src/`, `tests/` | diretórios reservados; `tests/` contém validação documental segura |
+| `reports/` | diagnóstico, evidências e relatórios |
+| `ATTRIBUTION.md` | créditos e licenças de terceiros |
 
-A utilização operacional das ferramentas depende de disponibilidade, configuração e homologação.
+## Governança
 
-### Estado das ferramentas de IA
+A hierarquia é definida em `AGENTS.md`. O fluxo obrigatório está em `governance/politicas/fluxo-obrigatorio.md`:
 
-- OpenCode e Codex CLI: ferramentas principais, com homologação operacional parcial e evidências registradas.
-- Claude Code: adaptadores documentais preparados em `.claude/`; não instalado nem testado neste ambiente.
-- GitHub Copilot CLI: não faz parte das obrigações de homologação nem dos fluxos futuros; apenas referência histórica.
+REQUISITOS → BRAINSTORMING → SPEC → PLANEJAMENTO → REVISÃO ARQUITETURAL → APROVAÇÃO DO USUÁRIO → [IMPLEMENTAÇÃO FUTURA] → TESTES → REVISÃO → HOMOLOGAÇÃO → RELATÓRIO.
 
-## 🤖 Desenvolvimento orientado por IA
+O fluxo para antes de qualquer implementação até nova autorização. Nenhuma skill, agente ou comando pode autorizar ações destrutivas ou publicação remota por conta própria.
 
-O projeto prevê uma estrutura de agentes especializados para apoiar diferentes etapas do desenvolvimento.
+## Fonte única de verdade
 
-| Agente | Responsabilidade |
-|---|---|
-| Orchestrator | Coordenar tarefas e agentes |
-| Architect | Definir e revisar a arquitetura |
-| Gameplay Designer | Planejar mecânicas e sistemas |
-| World Designer | Planejar ambientes e mundo aberto |
-| AI Engineer | Planejar sistemas inteligentes e NPCs |
-| Implementer | Implementar funcionalidades autorizadas |
-| Tester / QA | Planejar e executar testes |
-| Reviewer | Revisar implementações |
-| Security Reviewer | Avaliar riscos e segurança |
-| DevOps / Build Engineer | Planejar builds e automações |
-| Documentation | Manter a documentação técnica |
-| Performance Engineer | Avaliar desempenho e otimizações |
+`docs/FONTE-UNICA-VERDADE.md` define onde vive cada classe de informação. Adaptadores de IA consomem esses caminhos; não mantêm versões paralelas de arquitetura, decisões, estado ou pendências. O estado real do repositório e os relatórios verificáveis prevalecem sobre afirmações de sessões anteriores.
 
-Os agentes deverão operar conforme as políticas de governança e os limites de autorização do projeto.
+## Continuidade entre ferramentas
 
-A existência de uma definição documental não significa que o agente esteja automaticamente configurado ou homologado.
+Protocolo em `governance/politicas/continuidade-ia.md`. Modelo reutilizável em `templates/relatorios/MODELO-RELATORIO-CONTINUIDADE.md`. Ao encerrar tarefa, registrar identificador, objetivo, arquivos alterados, decisões, testes, resultados, erros, pendências, próxima ação e estado do Git. Nenhum prompt com credenciais ou segredos deve ser registrado.
 
-## 🧠 Skills e metodologia
+## Agentes especializados
 
-A arquitetura de IA utiliza como referência um conjunto de 14 skills, incluindo:
+Os 12 papéis canônicos estão em `governance/agentes-jogo/`: ORCHESTRATOR, ARCHITECT, WORLD DESIGNER, GAMEPLAY DESIGNER, AI ENGINEER, IMPLEMENTER, TESTER/QA, REVIEWER, SECURITY REVIEWER, DEVOPS/BUILD, DOCUMENTATION e PERFORMANCE ENGINEER. `IMPLEMENTER` permanece bloqueado nesta fase.
 
-- Brainstorming e levantamento de requisitos.
-- Planejamento e execução de tarefas.
-- Desenvolvimento orientado por testes (TDD).
-- Depuração sistemática.
-- Desenvolvimento assistido por subagentes.
-- Revisão de código.
-- Verificação antes da conclusão.
-- Gerenciamento de branches e worktrees.
-- Engenharia e otimização de contexto.
+Eles são distintos dos 18 agentes genéricos VEYLOQ, classificados em `governance/politicas/integracao-veyloq.md`.
 
-As skills serão utilizadas conforme a necessidade de cada tarefa, evitando carregar instruções desnecessárias.
+## Integração VEYLOQ
 
-## 🏗️ Arquitetura do projeto
+O pacote `pacote-desenvolvimento-com-ia` v1.0 foi preservado: 99 arquivos validados, 14 skills, 18 agentes genéricos, 8 comandos, 6 kits e 1 bundle. Licenças em `ATTRIBUTION.md` e nos arquivos `LICENSE.txt`. O monólito original está em `kits/veyloq/referencias/AGENTS-veyloq-original.md`.
 
-A estrutura inicial é dedicada à organização do desenvolvimento.
+Nenhum componente é ativado automaticamente. Componentes com servidor local, `git push`, `git clean`, `rm -rf` ou scripts não auditados permanecem inativos ou pendentes de validação.
 
-Os principais componentes previstos incluem:
+## Ferramentas de IA — classificação operacional
 
-- **AGENTS.md:** instruções centrais para agentes.
-- **governance/:** políticas, segurança e critérios de aprovação.
-- **docs/:** especificações, decisões arquiteturais e documentação.
-- **.agents/skills/:** habilidades reutilizáveis.
-- **.opencode/:** configurações de agentes e comandos, quando homologadas.
-- **.claude/:** adaptadores documentais opcionais para Claude Code.
-- **docs/operations/:** guias operacionais documentais.
-- **templates/:** modelos de documentação e planejamento.
-- **reports/:** relatórios de execução e validação.
-- **kits/ e bundles/:** referências e métodos complementares.
-
-A organização poderá evoluir conforme as necessidades técnicas do projeto.
-
-## 🔄 Fluxo de desenvolvimento
-
-O processo previsto segue as etapas:
-
-**Requisitos → Brainstorming → Especificação → Planejamento → Revisão arquitetural → Aprovação → Implementação → Testes → Revisão → Homologação → Documentação.**
-
-Toda implementação deverá respeitar os critérios de aprovação estabelecidos.
-
-As decisões arquiteturais relevantes serão registradas, permitindo rastreabilidade e revisão futura.
-
-## 📍 Estado atual
-
-**Fase: preparação da estrutura de inteligência artificial.**
-
-O projeto encontra-se na etapa de organização de agentes, skills, documentação, governança e processos de desenvolvimento.
-
-Ainda não foram iniciados:
-
-- Projeto executável na Unreal Engine.
-- Programação de sistemas em C++.
-- Desenvolvimento de Blueprints.
-- Construção do mapa.
-- Implementação de gameplay.
-- Desenvolvimento de personagens e NPCs.
-- Produção de assets definitivos.
-
-A implementação dessas funcionalidades dependerá das próximas definições do projeto.
-
-### Estado da homologação
-
-A infraestrutura de IA está consolidada, com validação estrutural local e no GitHub via
-`.github/workflows/validate-structure.yml`. A homologação operacional é parcial e baseada em
-evidências reais: OpenCode e Codex CLI foram executados; Claude Code foi apenas preparado
-documentalmente; GitHub Copilot CLI é referência histórica e está fora do escopo atual.
-Detalhes em `reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt` e
-`reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt`.
-Este projeto ainda não possui jogo, protótipo funcional ou implementação de gameplay.
-
-## 🗺️ Roadmap
-
-| Fase | Objetivo | Situação |
+| Ferramenta | Versão detectada | Classificação |
 |---|---|---|
-| 01 | Definição da identidade do projeto | Definida |
-| 02 | Consolidação da arquitetura de IA | Em preparação |
-| 03 | Homologação dos agentes e ferramentas | Parcial |
-| 04 | Definição dos requisitos do jogo | Pendente |
-| 05 | Planejamento arquitetural UE5 | Pendente |
-| 06 | Preparação do ambiente de desenvolvimento | Pendente |
-| 07 | Primeiro protótipo técnico | Pendente |
-| 08 | Desenvolvimento incremental | Futuro |
-| 09 | Testes, otimização e evolução | Futuro |
+| Codex CLI | `codex-cli 0.171.0` | CONFIGURADA, NÃO TESTADA |
+| OpenCode | `opencode 1.19.0` | CONFIGURADA, NÃO TESTADA |
+| GitHub Copilot CLI | `GitHub Copilot CLI 1.0.109` | FORA DE ESCOPO, NÃO HOMOLOGADA |
+| Claude Code | não instalada | NÃO DISPONÍVEL |
 
-O roadmap é preliminar e poderá ser revisado.
+Executáveis e versões foram verificados. Nenhuma autenticação foi testada, nenhuma chamada de modelo foi executada e nenhuma ferramenta foi iniciada em sessão ativa. Isso evita consumo pago não autorizado. Adaptadores e documentação estão preparados para qualquer uma das três ferramentas, sem dependência obrigatória.
 
-## 🔐 Governança e segurança
+## Ambiente detectado
 
-O projeto adota os seguintes princípios:
+- Windows 11 Pro 10.0.26300, 64 bits;
+- Git `2.55.0.windows.5`;
+- Python `3.13.15`;
+- Git LFS `3.7.1`;
+- .NET `10.0.402`;
+- Unreal Engine: NÃO DETECTADA;
+- `cl.exe`, `clang-cl`, `g++`, `cmake`, `ninja` e `msbuild`: NÃO DISPONÍVEIS no PATH;
+- diretórios de configuração de Codex e OpenCode existem no perfil, mas não foram lidos para evitar exposição de segredos.
 
-- Nenhuma implementação sem autorização.
-- Preservação dos arquivos e documentos existentes.
-- Separação entre planejamento e execução.
-- Verificações técnicas antes da conclusão de tarefas.
-- Registro de alterações e evidências.
-- Proteção de informações sensíveis.
-- Respeito às licenças e à propriedade intelectual.
-- Utilização de recursos de terceiros somente quando devidamente autorizada.
+## SPEC-001 e MARCO-001
 
-## 📄 Licenças e atribuições
+- `docs/specs/SPEC-001-ARQUITETURA-INICIAL.md`: **PROPOSTA**.
+- `MARCO-001 — Projeto Unreal inicial compilável`: planejado na seção 29 da SPEC; não executado.
+- Dependências: definir versão da engine, revisão arquitetural e aprovação explícita do responsável pelo projeto.
 
-O licenciamento do código e dos conteúdos originais do jogo ainda será definido.
+## Como iniciar uma tarefa
 
-Ferramentas, skills, bibliotecas e materiais de terceiros permanecem sujeitos às respectivas licenças e condições de utilização.
+1. Ler `AGENTS.md`, `docs/FONTE-UNICA-VERDADE.md` e políticas aplicáveis.
+2. Verificar o estado do Git com comandos somente leitura.
+3. Carregar sob demanda apenas o papel canônico necessário.
+4. Seguir o fluxo obrigatório e registrar critérios de aceite.
+5. Executar validações permitidas e registrar evidências em `reports/`.
+6. Declarar explicitamente testes não executados e pendências.
+7. Ao encerrar, gerar relatório de continuidade.
 
-Consulte `ATTRIBUTION.md` para informações sobre os componentes de terceiros incorporados à estrutura de desenvolvimento.
+## Validações disponíveis
 
-## 👨‍💻 Desenvolvimento
+`tests/validar-preparacao.ps1` executa validações somente leitura de estrutura, contagens, referências, adaptadores, ausência de artefatos de jogo e `git diff --check`. Testes de Unreal Automation, gameplay, desempenho e assets dependem de projeto funcional e não foram executados.
 
-**GFM — Projetos de Software**
+## Limitações atuais
 
-Projeto independente desenvolvido com apoio de ferramentas e agentes de inteligência artificial.
+- Nenhuma homologação operacional com chamada de modelo.
+- Nenhuma autenticação de IA verificada.
+- Unreal Engine e toolchain C++ não detectados.
+- Nenhum agente VEYLOQ ativado.
+- Nenhum script de terceiros executado.
+- Nenhum commit ou push havia sido realizado até a emissão dos relatórios; verificar o Git para o estado atual.
+- Dependências documentadas ausentes: `context-manager`, `websocket-engineer`, `deployment-engineer`, `database-optimizer`, `context-compression`, `filesystem-context`, `project-development`.
 
-**Repositório:** `gfmaurilajob/gfm-ruas-do-brasil`
+## Próxima etapa
 
----
+Definir a versão da Unreal Engine, revisar e aprovar a SPEC-001, registrar ADRs e somente então autorizar o MARCO-001. A implementação só começa após autorização específica.
 
-*GFM — Ruas do Brasil*
-
-*Das ideias às ruas. Um mundo brasileiro em construção.*
+Relatórios:
+- `reports/RELATORIO-DIAGNOSTICO-INICIAL.txt`;
+- `reports/RELATORIO-RUAS-DO-BRASIL-PREPARACAO-INICIAL.txt`;
+- `reports/RELATORIO-RUAS-DO-BRASIL-HOMOLOGACAO-IA-SPEC-001.txt`.

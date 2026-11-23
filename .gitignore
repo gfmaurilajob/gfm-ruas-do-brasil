@@ -39,3 +39,18 @@ Desktop.ini
 # Dependências de ferramentas auxiliares futuras
 node_modules/
 /pacote-desenvolvimento-com-ia-v1.0-agents.zip
+
+# Unreal — arquivos por usuário, gerados e binários de plugin
+*.uproject.user
+Config/DefaultEditorPerProjectUserSettings.ini
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+Content/Developers/
+*.obj
+*.dll
+*.pdb
+*.exp
+*.ilk
+*.lib
+
+# O ZIP na raiz permanece ignorado; a cópia em kits/ é rastreada intencionalmente como fonte do pacote.

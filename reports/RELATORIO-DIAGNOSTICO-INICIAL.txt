@@ -1,0 +1,75 @@
+RELATÓRIO DE DIAGNÓSTICO INICIAL — gfm-ruas-do-brasil
+Data: 2026-11-23
+Finalidade: registro anterior a qualquer alteração da recuperação, reorganização e integração inicial.
+
+1. IDENTIFICAÇÃO
+- Raiz confirmada: C:/Work/dev/veyloq/gfm-ruas-do-brasil
+- Repositório Git: sim
+- Branch: develop
+- HEAD: 081039b85492654dd659d04483acdc8f08410210
+- Resumo do HEAD: 081039b bkp
+- Remoto origin: https://github.com/gfmaurilajob/gfm-ruas-do-brasil.git
+
+2. ESTADO DO GIT
+- git status --porcelain: vazio
+- Arquivos rastreados: 104
+- Arquivos não rastreados: 0
+- Alterações não commitadas: nenhuma
+- Histórico preservado: sim; nenhum reset, clean ou remoção executada
+
+3. INVENTÁRIO DE ARQUIVOS (antes das alterações)
+Extensões:
+- .md: 44
+- .txt: 41
+- sem extensão: 6
+- .py: 3
+- .sh: 3
+- .zip: 1
+- .ts: 1
+- .gitignore: 1
+- .gitattributes: 1
+- .html: 1
+- .cjs: 1
+- .js: 1
+
+Diretórios presentes na raiz:
+- .agents/
+- agents/
+- bundles/
+- commands/
+- kits/
+- AGENTS.md
+- ATTRIBUTION.md
+- README.md
+- .gitattributes
+- .gitignore
+
+Pacote VEYLOQ:
+- ZIP: kits/pacote-desenvolvimento-com-ia-v1.0-agents.zip
+- 102 entradas; 99 arquivos sob agents/; integridade confirmada na auditoria anterior (0 ausentes, 0 divergentes)
+- 14 skills em .agents/skills/
+- 18 diretórios de agentes genéricos em agents/
+- 8 diretórios de comandos em commands/
+- 6 kits em kits/
+- 1 bundle em bundles/
+
+4. DADOS SENSÍVEIS
+- Nenhum arquivo com nome indicativo de segredo, credencial, chave privada ou .env foi encontrado.
+- Busca por palavras-chave encontrou apenas dois arquivos com exemplos documentais:
+  - AGENTS.md (exemplos de variáveis em templates de scaffold)
+  - .agents/skills/context-fundamentals/scripts/context_manager.py (texto documental sobre OAuth)
+- Nenhum valor de credencial foi exibido ou copiado para este relatório.
+
+5. PONTOS CRÍTICOS IDENTIFICADOS ANTES DA RECUPERAÇÃO
+- AGENTS.md da raiz era o monólito VEYLOQ de aproximadamente 8.621 linhas.
+- O commit c48262a removeu .claude/, .opencode/, .github/, docs/, governance/, reports/ e templates/.
+- O commit 081039b excluiu old/AGENTS.md e promoveu o AGENTS original do VEYLOQ para a raiz (R100).
+- old/AGENTS.md continha a governança específica do projeto, incluindo hierarquia, 12 papéis, fluxo de aprovação e restrições de implementação.
+- README.md continha afirmações sobre estruturas e homologações que não existiam no HEAD inicial.
+
+6. AUTORIZAÇÃO E LIMITES DESTA OPERAÇÃO
+Autorizado: alterar arquivos e configurações dentro do repositório.
+Não autorizado: exclusão irreversível, comandos destrutivos, git push, instalação de programas/dependências, Docker/servidores, execução de scripts VEYLOQ não auditados, gameplay/assets, configurações globais, desativação de segurança, alterações fora do repositório, git commit.
+
+7. CONCLUSÃO DO DIAGNÓSTICO
+Não havia alterações preexistentes a preservar. A recuperação pode prosseguir preservando o histórico Git e reconstruindo a governança a partir de conteúdo comprovado no histórico.

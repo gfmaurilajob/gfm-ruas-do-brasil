@@ -1,0 +1,313 @@
+RELATÓRIO FINAL — HOMOLOGAÇÃO DE IA, CONTINUIDADE E SPEC-001
+Projeto: Ruas do Brasil
+Repositório: gfm-ruas-do-brasil
+Data: 2026-11-23
+Classificação geral: PREPARAÇÃO TÉCNICA CONCLUÍDA — HOMOLOGAÇÃO OPERACIONAL DE IA NÃO CONCLUÍDA
+
+==================================================
+1. RESUMO EXECUTIVO
+==================================================
+O ciclo executou diagnóstico de ambiente, classificação de ferramentas de IA, protocolo de continuidade entre Codex CLI/OpenCode/Claude Code, criação da SPEC-001, planejamento do MARCO-001, atualização documental e validações não destrutivas.
+
+Nenhuma ferramenta foi classificada como HOMOLOGADA porque não foi executada chamada de modelo. Isso foi deliberado: não há autorização específica para consumo pago, e a simples presença do executável não prova autenticação nem funcionamento de agente. Codex CLI e OpenCode ficam CONFIGURADAS, NÃO TESTADAS; Claude Code fica NÃO DISPONÍVEL.
+
+A SPEC-001 foi criada com 32 seções e permanece PROPOSTA. A versão da Unreal Engine está PENDENTE DE DEFINIÇÃO. Nenhum projeto Unreal, código C++, Blueprint, mapa, asset ou gameplay foi criado. Nenhum commit ou push foi feito.
+
+==================================================
+2. ESTADO INICIAL
+==================================================
+Raiz: C:/Work/dev/veyloq/gfm-ruas-do-brasil
+Branch: develop
+HEAD: 081039b85492654dd659d04483acdc8f08410210 (inalterado)
+Estado Git no início: alterações locais do ciclo anterior preservadas; nenhuma exclusão, reset, clean ou reescrita.
+
+Já existiam antes deste ciclo:
+- governança recuperada;
+- AGENTS.md reorganizado;
+- 12 papéis especializados canônicos;
+- pacote VEYLOQ preservado;
+- 24 adaptadores estruturalmente validados;
+- documentação de preparação inicial;
+- relatórios de diagnóstico e preparação.
+
+==================================================
+3. ARQUIVOS CRIADOS
+==================================================
+Neste ciclo:
+- CLAUDE.md (ponteiro leve, sem duplicação da governança);
+- docs/FONTE-UNICA-VERDADE.md;
+- docs/specs/SPEC-001-ARQUITETURA-INICIAL.md;
+- docs/decisoes/README.md;
+- docs/tarefas/README.md;
+- docs/estado/ESTADO-IMPLEMENTACAO.md;
+- docs/estado/PENDENCIAS.md;
+- governance/politicas/continuidade-ia.md;
+- templates/relatorios/MODELO-RELATORIO-CONTINUIDADE.md;
+- tests/validar-preparacao.ps1;
+- reports/RELATORIO-RUAS-DO-BRASIL-HOMOLOGACAO-IA-SPEC-001.txt (este relatório).
+
+Diretórios criados para os artefatos acima: docs/specs, docs/decisoes, docs/tarefas, docs/estado, templates/relatorios.
+
+==================================================
+4. ARQUIVOS MODIFICADOS
+==================================================
+Neste ciclo:
+- AGENTS.md (hierarquia ampliada para fonte única de verdade, SPEC, estado e continuidade);
+- README.md (estado real, classificação das ferramentas, SPEC-001, MARCO-001 e ambiente detectado);
+- .codex/README.md;
+- .opencode/README.md;
+- .claude/README.md.
+
+Ainda modificados em relação ao HEAD por alterações do ciclo anterior, preservadas:
+- .gitattributes;
+- .gitignore.
+
+==================================================
+5. VERSÕES DETECTADAS
+==================================================
+INSTALADO / CONFIGURADO / AUTENTICADO / TESTADO / HOMOLOGADO:
+
+| Item | Instalado | Configurado | Autenticado | Testado | Homologado | Evidência |
+|---|---|---|---|---|---|---|
+| Codex CLI | SIM | SIM (documentação local) | NÃO VERIFICADO | NÃO | NÃO | `codex --version` = 0.171.0; `codex --help` |
+| OpenCode | SIM | SIM (12 adapters) | NÃO VERIFICADO | NÃO | NÃO | `opencode --version` = 1.19.0; `opencode --help` |
+| Claude Code | NÃO | adapters preparados | NÃO | NÃO | NÃO | `Get-Command claude` e `claude --version` falharam |
+| GitHub Copilot CLI | SIM | FORA DE ESCOPO | NÃO VERIFICADO | NÃO | NÃO | `gh copilot --version` = 1.0.109 |
+| Git | SIM | SIM | N/A | SIM (somente leitura) | SIM para uso documental | `git --version` = 2.55.0.windows.5 |
+| Python | SIM | N/A | N/A | SIM | SIM para uso documental | `python --version` = 3.13.15 |
+| Git LFS | SIM | regras declaradas | N/A | NÃO | NÃO | `git lfs version` = 3.7.1 |
+| .NET | SIM | N/A | N/A | SIM (versão) | NÃO para build UE | `dotnet --version` = 10.0.402 |
+| Unreal Engine | NÃO DETECTADA | NÃO | NÃO | NÃO | NÃO | sem diretórios/executáveis/registro Epic |
+| Toolchain C++ | NÃO DETECTADA | NÃO | N/A | NÃO | NÃO | cl, clang-cl, g++, cmake, ninja, msbuild ausentes do PATH |
+
+Ambiente: Windows 11 Pro 10.0.26300, build 26300, x64.
+Diretórios de configuração de Codex e OpenCode no perfil foram apenas verificados quanto à existência. Seus conteúdos não foram lidos, para evitar exposição de segredos.
+
+==================================================
+6. RESULTADO CODEX
+==================================================
+Classificação individual: CONFIGURADA, NÃO TESTADA.
+
+Verificado:
+- executável local em C:/Users/gfmau/AppData/Roaming/npm/codex.ps1;
+- versão `codex-cli 0.171.0`;
+- subcomandos disponíveis por `codex --help`, incluindo `exec`, `review`, `doctor`, `sandbox`, `login` e `mcp`;
+- leitura estrutural de `AGENTS.md`, papéis canônicos e SPEC pelo script de validação;
+- compatibilidade documental das instruções locais em `.codex/README.md`;
+- ausência de automação de commit, push, instalação ou comando destrutivo na documentação local.
+
+Não executado:
+- `codex exec`, `codex review`, `codex doctor` ou qualquer sessão com chamada de modelo;
+- teste de autenticação;
+- teste de sandbox;
+- acesso de rede além de nenhum (apenas comandos locais `--version`/`--help`).
+
+Motivo: não há autorização específica para eventual cobrança de uso de modelo. Portanto não é afirmado que o agente responde, carrega contexto ativamente ou respeita permissões em execução real.
+
+==================================================
+7. RESULTADO OPENCODE
+==================================================
+Classificação individual: CONFIGURADA, NÃO TESTADA.
+
+Verificado:
+- executável local em C:/Users/gfmau/AppData/Roaming/npm/opencode.ps1;
+- versão `opencode 1.19.0`;
+- subcomandos disponíveis por `opencode --help`, incluindo `run`, `agent`, `providers`, `serve`, `acp` e `session`;
+- 12 adaptadores em `.opencode/agents/` com frontmatter `permissions` válido;
+- ponteiros para os 12 papéis canônicos;
+- leitura estrutural de `AGENTS.md`, fonte única de verdade e SPEC pelo script de validação;
+- ausência de hooks e de configuração automática de execução no repositório.
+
+Não executado:
+- `opencode run`;
+- sessão interativa;
+- `serve`, `acp`, `providers`, `agent list` ou qualquer comando que inicie processo prolongado ou autenticação;
+- chamada de modelo.
+
+Timeout não foi aplicado porque nenhum processo de teste foi iniciado. Não houve processo a encerrar. Configurações globais não foram alteradas.
+
+==================================================
+8. RESULTADO CLAUDE CODE
+==================================================
+Classificação individual: NÃO DISPONÍVEL.
+
+Verificado:
+- `Get-Command claude` não encontrou executável;
+- `claude --version` falhou por programa não encontrado;
+- diretório `~/.claude` não existe;
+- 12 adaptadores em `.claude/agents/` com frontmatter `tools` válido;
+- `CLAUDE.md` criado como ponteiro leve para `AGENTS.md`;
+- nenhum hook, `settings.json` ou credencial criado.
+
+Não executado:
+- instalação;
+- autenticação;
+- chamada de modelo;
+- teste de agente.
+
+O projeto continua funcional sem Claude Code; a integração está PREPARADA, NÃO HOMOLOGADA.
+
+==================================================
+9. AGENTES DISPONÍVEIS
+==================================================
+Papéis canônicos: 12 em `governance/agentes-jogo/`:
+ORCHESTRATOR, ARCHITECT, WORLD DESIGNER, GAMEPLAY DESIGNER, AI ENGINEER, IMPLEMENTER, TESTER/QA, REVIEWER, SECURITY REVIEWER, DEVOPS/BUILD, DOCUMENTATION, PERFORMANCE ENGINEER.
+
+Adaptadores:
+- OpenCode: 12/12 com `permissions` válido;
+- Claude Code: 12/12 com `tools` válido;
+- Codex: integração documental via `AGENTS.md` e `.codex/README.md`, sem formato de configuração inventado.
+
+Agentes genéricos VEYLOQ: 18 diretórios preservados, classificados em `governance/politicas/integracao-veyloq.md`. Nenhum foi executado ou ativado.
+
+`IMPLEMENTER` permanece bloqueado nesta fase.
+
+==================================================
+10. SKILLS DISPONÍVEIS
+==================================================
+Pacote preservado: 14 skills em `.agents/skills/`, 8 comandos em `commands/`, 6 kits originais em `kits/`, 1 bundle em `bundles/` e monólito em `kits/veyloq/referencias/AGENTS-veyloq-original.md`.
+
+Integridade revalidada neste ciclo:
+- entradas relevantes do ZIP: 99;
+- arquivos correspondentes verificados por SHA-256: 99;
+- ausentes: 0;
+- divergentes: 0.
+
+Três metadados do ZIP (`manifest.json`, `README.md`, `LICENSE.txt`) não fazem parte dos 99 arquivos de conteúdo preservado. Nenhuma skill foi ativada. Componentes inseguros ou pendentes não foram executados.
+
+==================================================
+11. TESTES EXECUTADOS
+==================================================
+- verificação de SO, diretório, branch, HEAD e estado Git com comandos somente leitura;
+- verificação de versões de Git, Python, Codex CLI, OpenCode, Copilot CLI e Git LFS;
+- verificação de existência de executáveis e caminhos de Unreal Engine e toolchain C++;
+- leitura de `codex --help` e `opencode --help` sem iniciar agente;
+- criação e execução de `tests/validar-preparacao.ps1`;
+- validação de 32 seções da SPEC-001, status PROPOSTA e registro `PENDENTE DE DEFINIÇÃO`;
+- validação de 12 papéis, 12 adaptadores OpenCode, 12 adaptadores Claude Code e frontmatters;
+- validação de 14 skills, 18 diretórios de agentes genéricos, 8 comandos, 6 kits, 1 bundle e monólito preservado;
+- validação de 18 referências obrigatórias;
+- validação de ausência de `.uproject`, `.cpp`, `.h`, `.hpp`, `.umap` e `.uasset`;
+- validação de ausência de `.claude/settings.json` com hooks;
+- `git diff --check`: sem erros; apenas avisos LF→CRLF em arquivos de texto já conhecidos;
+- verificação de HEAD preservado;
+- verificação de integridade SHA-256 do pacote VEYLOQ (99/99).
+
+Resultado do script de validação: OK, todas as verificações passaram.
+
+==================================================
+12. TESTES NÃO EXECUTADOS
+==================================================
+- chamada de modelo em Codex CLI: não executada por ausência de autorização de custo;
+- chamada de modelo em OpenCode: não executada pelo mesmo motivo;
+- teste operacional em Claude Code: não executado por não instalação;
+- verificação de autenticação das ferramentas: não executada;
+- `codex doctor`, `codex sandbox`, `codex exec`, `opencode run`, `opencode providers`, `opencode agent`: não executados;
+- build Unreal, Automation Testing, gameplay, desempenho, profiling e validação de assets: não executados por inexistência de projeto;
+- instalação de engine, compiladores, plugins, dependências ou serviços: não executada;
+- scripts VEYLOQ: não executados;
+- rede além de comandos locais de versão/ajuda: não utilizada;
+- commit, push, reset, clean e exclusões: não executados.
+
+==================================================
+13. SPEC-001 CRIADA
+==================================================
+Caminho: docs/specs/SPEC-001-ARQUITETURA-INICIAL.md
+Classificação: PROPOSTA.
+Aprovada pelo responsável: NÃO.
+
+Conteúdo: 32 seções, incluindo visão, objetivos, escopo, requisitos funcionais e não funcionais, premissas, versão da engine, organização Unreal, C++, Blueprints, módulos, subsistemas, mundo aberto, World Partition, mapas, personagens, veículos, tráfego, IA, interação, missões, salvamento, UI, assets, desempenho, testes, Git/LFS, diretórios, etapas, riscos, aceitação e decisões pendentes.
+
+Separação exigida:
+- arquitetura aprovada: NENHUMA;
+- arquitetura proposta: todo o conteúdo técnico da SPEC;
+- decisões pendentes: seção 32 e docs/estado/PENDENCIAS.md.
+
+Versão da Unreal Engine: PENDENTE DE DEFINIÇÃO.
+MARCO-001: planejado apenas na seção 29; não executado.
+
+==================================================
+14. DECISÕES PENDENTES
+==================================================
+| ID | Decisão/gate | Situação |
+|---|---|---|
+| P-001/D-001 | Definir versão exata da Unreal Engine | PENDENTE |
+| P-002/D-002 | Aprovar SPEC-001 | PENDENTE |
+| P-003/D-003 | Revisão arquitetural por ARCHITECT e ADR | PENDENTE |
+| D-004 | Estrutura final de módulos e .Build.cs | PENDENTE |
+| D-005 | Uso de World Partition no primeiro mapa | PENDENTE |
+| D-006 | Plugin/versão de Enhanced Input | PENDENTE |
+| P-008/D-007 | Política final de Git LFS para assets | PENDENTE |
+| P-009/D-008 | Toolchain C++ e compilador homologado | PENDENTE |
+| P-004/P-005/D-009 | Homologação operacional de IA com chamada de modelo | PENDENTE |
+| P-006 | Instalação/autenticação de Claude Code | PENDENTE |
+| P-007 | Auditoria de componentes VEYLOQ pendentes | PENDENTE |
+
+Nenhuma pendência foi resolvida por presunção.
+
+==================================================
+15. SEGURANÇA
+==================================================
+Verificado:
+- nenhuma ferramenta substituiu `AGENTS.md` ou a fonte única de verdade;
+- nenhum commit, push, publicação, instalação ou serviço foi executado;
+- nenhum comando destrutivo foi executado;
+- nenhuma credencial, token, PII ou segredo foi exibido, lido de arquivos de configuração do perfil ou registrado;
+- nenhum script VEYLOQ foi executado;
+- nenhum hook ou `settings.json` com automação foi criado;
+- adaptadores OpenCode declaram `shell` e `edit` negados;
+- adaptadores Claude Code declaram apenas `Read`, `Glob` e `Grep`;
+- componentes com `git push`, `git clean`, `rm -rf`, servidor local ou scripts não auditados permanecem inativos/pendentes.
+
+Ressalva obrigatória: instruções textuais não garantem isolamento técnico por si mesmas. Os controles reais disponíveis são as permissões declaradas nos formatos suportados, a ausência de hooks/automação, a ausência de execução de scripts de terceiros e as validações somente leitura. Sandbox de IA não foi exercitado.
+
+==================================================
+16. ESTADO GIT
+==================================================
+Branch: develop
+HEAD: 081039b85492654dd659d04483acdc8f08410210 (inalterado)
+Commit criado: NÃO no momento desta emissão; verificar o histórico Git para o estado atual.
+Push executado: NÃO no momento desta emissão; verificar o histórico Git para o estado atual.
+Reset/clean: NÃO
+
+Status final por arquivo:
+- 4 arquivos modificados em relação ao HEAD: `.gitattributes`, `.gitignore`, `AGENTS.md`, `README.md`;
+- 74 arquivos criados/não rastreados no total, incluindo artefatos deste ciclo e do ciclo anterior;
+- `git diff --check`: sem erros.
+
+==================================================
+17. RISCOS
+==================================================
+- Ferramentas de IA não possuem homologação funcional; não há evidência de resposta a prompt, carregamento ativo de contexto ou respeito a permissões em execução real.
+- Unreal Engine não detectada; a versão define APIs, plugins e estrutura real do projeto.
+- Nenhum compilador C++ detectado no PATH; toolchain do MARCO-001 não validada.
+- World Partition pode ser prematuro para o primeiro protótipo.
+- Assets externos exigem verificação de licença e proveniência.
+- Dependência de uma única IA é evitada documentalmente, mas não elimina risco de indisponibilidade das três.
+- Continuidade depende de relatórios disciplinados; sem isso, contexto privado pode se perder.
+- Um relatório antigo pode divergir do estado atual; prevalece sempre o repositório verificável.
+
+==================================================
+18. PRÓXIMO MARCO DE DESENVOLVIMENTO
+==================================================
+MARCO-001 — Projeto Unreal inicial compilável.
+
+Objetivo: criar futuramente um projeto Unreal Engine 5 com C++ e Blueprints, sem gameplay complexo.
+
+Critérios propostos:
+1. projeto Unreal criado na versão confirmada;
+2. projeto abre no editor;
+3. compilação C++ bem-sucedida;
+4. módulo principal funcional;
+5. estrutura de conteúdo organizada;
+6. mapa técnico vazio;
+7. teste básico executado;
+8. documentação e ADRs atualizados.
+
+Pré-requisitos: definir versão da engine, aprovar SPEC-001, registrar revisão arquitetural e obter autorização específica. O MARCO-001 não foi executado neste ciclo.
+
+Classificação final das ferramentas:
+- Codex CLI: CONFIGURADA, NÃO TESTADA;
+- OpenCode: CONFIGURADA, NÃO TESTADA;
+- Claude Code: NÃO DISPONÍVEL;
+- SPEC-001: PROPOSTA.

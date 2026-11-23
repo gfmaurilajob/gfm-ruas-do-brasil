@@ -1,0 +1,188 @@
+RELATÓRIO DE PREPARAÇÃO INICIAL — RUAS DO BRASIL
+Arquivo: RELATORIO-RUAS-DO-BRASIL-PREPARACAO-INICIAL.txt
+Data: 2026-11-23
+Classificação final: APTO COM RESSALVAS
+
+1. RESUMO EXECUTIVO
+A recuperação, reorganização, integração documental e preparação inicial foram concluídas dentro do repositório. A governança original foi recuperada do histórico Git, o AGENTS.md foi reestruturado como índice de 146 linhas, o monólito VEYLOQ foi preservado integralmente em referência separada, os 12 papéis especializados foram restaurados e adaptados, e foram criadas políticas centrais de fluxo, segurança, qualidade, Git e integração VEYLOQ. Nenhum arquivo foi apagado, nenhum commit ou push foi feito, nenhum script VEYLOQ foi executado e nenhum código de jogo foi criado.
+
+O resultado é APTO COM RESSALVAS para a fase documental: a base está organizada e validada estruturalmente, mas nenhuma ferramenta de IA foi homologada operacionalmente, nenhum agente foi executado e não existe projeto Unreal funcional. A implementação continua bloqueada até SPEC aprovada e autorização específica.
+
+2. ESTADO INICIAL DO REPOSITÓRIO
+- Raiz: C:/Work/dev/veyloq/gfm-ruas-do-brasil
+- Branch: develop
+- HEAD: 081039b85492654dd659d04483acdc8f08410210 (081039b bkp)
+- Remoto origin: https://github.com/gfmaurilajob/gfm-ruas-do-brasil.git
+- git status --porcelain: vazio
+- Arquivos rastreados: 104
+- Arquivos não rastreados: 0
+- Alterações preexistentes: nenhuma
+- Dados sensíveis: nenhum arquivo com nome de segredo/credencial; duas ocorrências documentais de palavras-chave (AGENTS.md original e context_manager.py), sem valores reais
+- Diagnóstico registrado em: reports/RELATORIO-DIAGNOSTICO-INICIAL.txt
+
+3. ARQUIVOS CRIADOS
+Foram criados 59 arquivos, incluindo este relatório:
+
+.claude/README.md
+.claude/agents/ (12 adaptadores: ai-engineer, architect, devops-build, documentation, gameplay-designer, implementer, orchestrator, performance-engineer, reviewer, security-reviewer, tester-qa, world-designer)
+.codex/README.md
+.github/copilot-instructions.md
+.opencode/README.md
+.opencode/agents/ (12 adaptadores com os mesmos identificadores)
+docs/arquitetura/ue5-arquitetura-inicial.md
+docs/qualidade/README.md
+governance/agentes-jogo/ (12 papéis canônicos com os mesmos identificadores)
+governance/historico/AGENTS-original-recuperado.md
+governance/historico/INDICE.md
+governance/historico/copilot-instructions.md
+governance/historico/fluxo-obrigatorio.md
+governance/historico/papeis-agentes-gta-brasil-10-papeis.md
+governance/historico/quality-gates.md
+governance/historico/security-baseline.md
+governance/politicas/fluxo-obrigatorio.md
+governance/politicas/git-github.md
+governance/politicas/integracao-veyloq.md
+governance/politicas/qualidade-testes.md
+governance/politicas/seguranca-execucao.md
+kits/veyloq/referencias/AGENTS-veyloq-original.md
+reports/RELATORIO-DIAGNOSTICO-INICIAL.txt
+reports/RELATORIO-RUAS-DO-BRASIL-PREPARACAO-INICIAL.txt
+src/README.md
+tests/README.md
+
+4. ARQUIVOS MODIFICADOS
+- AGENTS.md — substituído por índice conciso de 146 linhas.
+- README.md — reescrito para refletir exclusivamente o estado real.
+- .gitignore — ampliado para artefatos Unreal, binários de plugin e configurações por usuário.
+- .gitattributes — esclarecimento de que não houve rastreamento LFS retroativo.
+
+5. ARQUIVOS RECUPERADOS DO HISTÓRICO
+Fonte principal: commit c48262a e commit 081039b.
+- old/AGENTS.md → governance/historico/AGENTS-original-recuperado.md (hash Git idêntico ao blob histórico)
+- old/docs/architecture/papeis-agentes-gta-brasil.md → governance/historico/papeis-agentes-gta-brasil-10-papeis.md (hash idêntico)
+- old/governance/agent-policies/fluxo-obrigatorio.md → governance/historico/fluxo-obrigatorio.md (hash idêntico)
+- old/governance/security/security-baseline.md → governance/historico/security-baseline.md (hash idêntico)
+- old/governance/quality-gates/quality-gates.md → governance/historico/quality-gates.md (hash idêntico)
+- old/.github/copilot-instructions.md → governance/historico/copilot-instructions.md (hash idêntico)
+- 12 arquivos old/.opencode/agents/*.md → governance/agentes-jogo/*.md (conteúdo adaptado somente em terminologia e caminhos; identificadores e responsabilidades preservados)
+- Monólito VEYLOQ original (HEAD:AGENTS.md) → kits/veyloq/referencias/AGENTS-veyloq-original.md (hash idêntico ao blob original)
+
+A pasta old/ não foi restaurada.
+
+6. ARQUIVOS PRESERVADOS
+- Todos os 99 arquivos do pacote VEYLOQ, validados contra o ZIP.
+- 14 skills em .agents/skills/, incluindo scripts e licenças.
+- 18 diretórios de agentes genéricos em agents/.
+- 8 diretórios de comandos em commands/.
+- 6 kits em kits/ e 1 bundle em bundles/.
+- ZIP original em kits/pacote-desenvolvimento-com-ia-v1.0-agents.zip.
+- ATTRIBUTION.md e todos os arquivos LICENSE.txt.
+- Histórico Git completo, sem reset, clean ou reescrita.
+
+7. ESTRUTURA FINAL
+- .agents/skills/ — skills VEYLOQ preservadas.
+- .claude/ — adaptadores documentais para Claude Code (12 agentes + README); sem hooks.
+- .codex/ — instruções de integração para Codex CLI.
+- .github/ — copilot-instructions.md adaptado, fora de escopo operacional.
+- .opencode/ — adaptadores para OpenCode (12 agentes + README).
+- agents/, commands/, kits/, bundles/ — pacote VEYLOQ preservado.
+- governance/agentes-jogo/ — 12 papéis canônicos do projeto.
+- governance/historico/ — fontes históricas verbatim e índice.
+- governance/politicas/ — fluxo, segurança, qualidade, Git e integração VEYLOQ.
+- docs/arquitetura/ e docs/qualidade/ — documentação técnica e ponte de qualidade.
+- reports/ — diagnóstico e relatório final.
+- src/ e tests/ — diretórios reservados, com README e sem código.
+- AGENTS.md, README.md, ATTRIBUTION.md, .gitignore, .gitattributes na raiz.
+
+8. GOVERNANÇA RECUPERADA
+- Hierarquia de instruções restabelecida em AGENTS.md, com AGENTS.md da raiz no topo.
+- Fluxo obrigatório REQUISITOS → BRAINSTORMING → SPEC → PLANEJAMENTO → REVISÃO ARQUITETURAL → APROVAÇÃO → [IMPLEMENTAÇÃO FUTURA] → TESTES → REVISÃO → HOMOLOGAÇÃO → RELATÓRIO.
+- Política de autorização com implementação bloqueada até autorização específica.
+- Regras de segurança e política central de execução com classes PERMITIDA, PERMITIDA COM AUTORIZAÇÃO e PROIBIDA.
+- Critérios de qualidade e obrigatoriedade de relatórios em reports/.
+- Regras de Git sem push, sem commits automáticos e sem operações destrutivas.
+- Terminologia ativa padronizada como “Ruas do Brasil”; a terminologia histórica permanece apenas em documentos identificados como históricos.
+
+9. INTEGRAÇÃO VEYLOQ
+- Inventário validado: 99 arquivos, 14 skills, 18 agentes genéricos, 8 comandos, 6 kits, 1 bundle.
+- Monólito original preservado e referenciado por AGENTS.md.
+- Camada de integração documentada em governance/politicas/integracao-veyloq.md.
+- Status atribuídos: nenhum componente ATIVO; kits e bundle DISPONÍVEL SOB DEMANDA como referência; skills metodológicas DISPONÍVEL SOB DEMANDA ou PENDENTE DE VALIDAÇÃO; componentes com servidor, push, clean, rm -rf ou geração de código INATIVO ou PROIBIDO.
+- Dependências inexistentes documentadas: context-manager, websocket-engineer, deployment-engineer, database-optimizer, context-compression, filesystem-context, project-development. Nenhuma foi inventada ou implementada.
+- Nenhum arquivo de terceiros foi modificado; a integração usa políticas e adaptadores.
+
+10. AGENTES ESPECIALIZADOS
+Os 12 papéis canônicos foram preservados: ORCHESTRATOR, ARCHITECT, WORLD DESIGNER, GAMEPLAY DESIGNER, AI ENGINEER, IMPLEMENTER, TESTER/QA, REVIEWER, SECURITY REVIEWER, DEVOPS/BUILD, DOCUMENTATION e PERFORMANCE ENGINEER. Cada arquivo em governance/agentes-jogo/ mantém responsabilidade, limites, entradas, saídas, critérios, dependências, condições de aprovação e ferramentas permitidas. IMPLEMENTER permanece BLOQUEADO. Os adaptadores de OpenCode e Claude Code apontam para esses arquivos e não criam responsabilidades concorrentes.
+
+11. INTEGRAÇÕES DAS FERRAMENTAS
+- Codex CLI: codex-cli 0.171.0 detectado; AGENTS.md e .codex/README.md preparados; NÃO TESTADO com agente ativo.
+- OpenCode: opencode 1.19.0 detectado; formato .opencode/agents/<id>.md confirmado no histórico; 12 adaptadores criados; NÃO TESTADO operacionalmente.
+- GitHub Copilot CLI: GitHub Copilot CLI 1.0.109 detectado; .github/copilot-instructions.md adaptado; fora de escopo e NÃO HOMOLOGADO; autenticação não testada.
+- Claude Code: comando não instalado (`claude --version` falhou); 12 adaptadores documentais em .claude/agents/; NÃO TESTADO.
+- Nenhum hook foi instalado; nenhum settings.json com hooks foi criado.
+
+12. VALIDAÇÕES EXECUTADAS
+- Integridade ZIP: 99 arquivos verificados por SHA-256; 0 ausentes; 0 divergentes (AGENTS.md do ZIP comparado com a referência preservada).
+- Contagens: 14 skills, 18 agentes genéricos, 8 comandos, 6 kits, 1 bundle, 12 papéis canônicos, 12 adaptadores OpenCode, 12 adaptadores Claude Code.
+- Hashes dos 7 documentos históricos recuperados idênticos aos blobs Git originais.
+- AGENTS.md com 146 linhas (limite: menos de 250).
+- 26 referências internas verificadas; 0 ausentes.
+- 24 adaptadores com frontmatter válido e ponteiro para o papel canônico.
+- Nenhum arquivo de governança ativo fora de reports/ e de governance/historico/ contém terminologia histórica; este relatório cita nomes de arquivos históricos apenas como evidência.
+- Nenhum `.uproject`, `.cpp`, `.h`, `.hpp`, `.umap` ou `.uasset` criado.
+- Nenhum hook encontrado.
+- git diff --check sem erros; apenas avisos LF→CRLF em AGENTS.md e README.md.
+- git lfs version: git-lfs/3.7.1; nenhum rastreamento retroativo aplicado.
+- Busca de credenciais: nenhuma credencial real encontrada; permanecem apenas duas ocorrências documentais conhecidas em arquivos VEYLOQ preservados.
+
+13. TESTES APROVADOS
+Aprovações abaixo são de validações estáticas e documentais executadas nesta operação:
+- integridade do pacote VEYLOQ;
+- estrutura de diretórios;
+- referências internas;
+- sintaxe básica dos adaptadores;
+- consistência README ↔ AGENTS ↔ políticas;
+- governança e hierarquia;
+- política de segurança de comandos;
+- ausência de código/gameplay;
+- git diff --check.
+
+14. TESTES NÃO EXECUTADOS
+-Codex CLI com agente ativo — não executado para evitar ações não auditadas.
+- OpenCode com subagentes — não executado; disponibilidade não presumida.
+- Claude Code — não instalado.
+- Autenticação GitHub Copilot CLI — não testada; fora de escopo.
+- Unreal Automation Testing — não executado; não existe projeto Unreal funcional.
+- Testes unitários, integração, gameplay e desempenho — não executados; sem código/build.
+- Scripts VEYLOQ (start-server.sh, stop-server.sh, server.cjs, find-polluter.sh, scripts Python, sdd-*, task-*) — não executados por política de segurança.
+- Instalação de dependências, Docker, servidores, git push, commits e publicação remota — não executados.
+
+15. RISCOS RESTANTES
+- Ferramentas de IA não homologadas operacionalmente; adaptadores são apenas documentais.
+- Componentes VEYLOQ com operações perigosas permanecem isolados e exigem auditoria específica.
+- Dependências documentadas ausentes podem gerar ambiguidade se agentes genéricos forem carregados sem a governança atual.
+- Documentação histórica usa terminologia antiga; foi isolada em governance/historico/ e sinalizada no índice.
+- Avisos LF/CRLF do Git não afetam conteúdo, mas podem gerar diffs de normalização no futuro.
+- Ainda não há projeto Unreal, portanto nada pode ser afirmado sobre build, assets ou desempenho.
+
+16. PENDÊNCIAS
+- Aprovar SPEC inicial de arquitetura antes de qualquer implementação.
+- Definir versão exata da Unreal Engine e plugins aplicáveis.
+- Avaliar Git LFS com projeto real; não aplicar rastreamento retroativo automático.
+- Realizar auditoria específica antes de ativar qualquer skill/agente VEYLOQ classificado como PENDENTE DE VALIDAÇÃO.
+- Testar operacionalmente Codex e OpenCode somente após autorização e com escopo controlado.
+- Instalar/testar Claude Code apenas se houver decisão e autorização.
+- Não há commit ou push pendente que deva ser feito automaticamente.
+
+17. ESTADO FINAL DO GIT
+- Branch: develop
+- HEAD: 081039b (inalterado)
+- Nenhum commit criado.
+- Nenhum push realizado.
+- Nenhum reset, clean ou exclusão executada.
+- Arquivos modificados: 4 (.gitattributes, .gitignore, AGENTS.md, README.md).
+- Arquivos criados: 59 (incluindo este relatório).
+- Histórico preservado integralmente.
+
+18. PRÓXIMA ETAPA RECOMENDADA
+Elaborar e aprovar a SPEC inicial de arquitetura UE5, com fronteiras C++/Blueprints, módulos previstos, plugins candidatos, estratégia de World Partition, Data Assets, Enhanced Input e testes. Somente após essa SPEC, revisão do ARCHITECT e autorização explícita, avaliar a criação do projeto Unreal. Nenhuma implementação deve começar antes desse gate.

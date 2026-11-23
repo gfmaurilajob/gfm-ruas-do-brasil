@@ -2,6 +2,6 @@
 * text=auto
 
 # Binários Unreal futuros via Git LFS (git-lfs 3.7.1 verificado neste ambiente).
-# Nenhum asset é criado nesta fase documental.
+# Nenhum asset é criado nesta fase documental e nenhum rastreamento LFS retroativo foi aplicado.
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap filter=lfs diff=lfs merge=lfs -text
