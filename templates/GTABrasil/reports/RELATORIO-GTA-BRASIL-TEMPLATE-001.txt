@@ -1,0 +1,374 @@
+RELATÓRIO GTA BRASIL — TEMPLATE 001
+Data: 2026-11-22. Ambiente: Windows, PowerShell, C:\Work\dev\GTABrasil.
+Resultado: NÃO HOMOLOGADO. A migração avançou, mas revisão semântica individual de todos os arquivos e validação nativa das ferramentas não estão comprovadas.
+
+1. ESTRUTURA
+Originais preservados: .claude, .codex, .github, .opencode, blueprints, devops, docs, governance, src, templates e tests. reports contém evidências. Não há projeto do jogo.
+
+2. AUDITORIA E DECISÕES
+Inventário inicial em reports/INVENTARIO-TEMPLATE-001.md; classificação individual de 178 arquivos do snapshot anterior em reports/CLASSIFICACAO-ARQUIVOS-001.md; justificativas e lista das remoções em reports/CLASSIFICACAO-REMOCOES-001.md. A classificação não equivale a comprovação de revisão humana integral de todos os conteúdos.
+Os oito PNG foram inspecionados visualmente. Os oito diagramas Draw.io tiveram XML processado e foram substituídos por docs/architecture/diagrams/mermaid/gta-brasil-visao.md; originais no backup. O PDF de terceiros teve 33 páginas extraídas integralmente como texto, mas não foi revisado semanticamente página por página; direitos de redistribuição não foram comprovados. Ele permanece local e ignorado no Git. Um documento histórico de outro contexto permanece local e ignorado para evitar disseminação de identificadores.
+
+3. ARQUIVOS REMOVIDOS (79)
+- blueprints/admin-react/README.md
+- blueprints/ai-integration/README.md
+- blueprints/api-worker-batch/README.md
+- blueprints/api-worker/README.md
+- blueprints/api/README.md
+- blueprints/batch/README.md
+- blueprints/fullstack-api-admin-site-landing/README.md
+- blueprints/fullstack-api-admin/README.md
+- blueprints/fullstack-api-landing-page/README.md
+- blueprints/fullstack-api-site/README.md
+- blueprints/fullstack-api-web-mobile/README.md
+- blueprints/landing-page-nextjs/README.md
+- blueprints/messaging/README.md
+- blueprints/microservices/README.md
+- blueprints/mobile-react-native/README.md
+- blueprints/modular-monolith/README.md
+- blueprints/site-react/README.md
+- blueprints/worker/README.md
+- devops/docker/api/README.md
+- devops/docker/batch/README.md
+- devops/docker/worker/README.md
+- docs/architecture/diagrams/drawio/gfm-template-ai-agents.drawio
+- docs/architecture/diagrams/drawio/gfm-template-backend.drawio
+- docs/architecture/diagrams/drawio/gfm-template-bootstrap.drawio
+- docs/architecture/diagrams/drawio/gfm-template-frontend.drawio
+- docs/architecture/diagrams/drawio/gfm-template-fullstack.drawio
+- docs/architecture/diagrams/drawio/gfm-template-gitflow.drawio
+- docs/architecture/diagrams/drawio/gfm-template-overview.drawio
+- docs/architecture/diagrams/drawio/gfm-template-quality-gates.drawio
+- docs/architecture/diagrams/gfm-template-ai-agents.png
+- docs/architecture/diagrams/gfm-template-backend.png
+- docs/architecture/diagrams/gfm-template-bootstrap.png
+- docs/architecture/diagrams/gfm-template-frontend.png
+- docs/architecture/diagrams/gfm-template-fullstack.png
+- docs/architecture/diagrams/gfm-template-gitflow.png
+- docs/architecture/diagrams/gfm-template-overview.png
+- docs/architecture/diagrams/gfm-template-quality-gates.png
+- docs/devops/frontend-devops.md
+- docs/security/frontend-security.md
+- docs/testing/frontend-testing.md
+- governance/coding-standards/dotnet-style.md
+- src/back-end/README.md
+- src/front-end/README.md
+- src/front-end/mobile/react-native-expo/README.md
+- src/front-end/shared/README.md
+- src/front-end/web/admin/README.md
+- src/front-end/web/landing-page/README.md
+- src/front-end/web/site/README.md
+- templates/tasks/bootstrap/back-end/README.md
+- templates/tasks/bootstrap/back-end/TASK-BE-000-requisitos-stack.md
+- templates/tasks/bootstrap/back-end/TASK-BE-001-estrutura-base.md
+- templates/tasks/bootstrap/back-end/TASK-BE-002-arquitetura-dependencias.md
+- templates/tasks/bootstrap/back-end/TASK-BE-003-configuracoes-ambientes.md
+- templates/tasks/bootstrap/back-end/TASK-BE-004-persistencia-migrations.md
+- templates/tasks/bootstrap/back-end/TASK-BE-005-docker-compose.md
+- templates/tasks/bootstrap/back-end/TASK-BE-006-banco-testes.md
+- templates/tasks/bootstrap/back-end/TASK-BE-007-testes-automatizados.md
+- templates/tasks/bootstrap/back-end/TASK-BE-008-seguranca.md
+- templates/tasks/bootstrap/back-end/TASK-BE-009-github-ci.md
+- templates/tasks/bootstrap/back-end/TASK-BE-010-github-cd.md
+- templates/tasks/bootstrap/back-end/TASK-BE-011-observabilidade.md
+- templates/tasks/bootstrap/back-end/TASK-BE-012-diagramas-drawio.md
+- templates/tasks/bootstrap/back-end/TASK-BE-013-validacao-bootstrap.md
+- templates/tasks/bootstrap/back-end/TASK-BE-014-mensageria.md
+- templates/tasks/bootstrap/front-end/FE-00-01-stack-selection.md
+- templates/tasks/bootstrap/front-end/FE-00-02-module-structure.md
+- templates/tasks/bootstrap/front-end/FE-00-03-typescript-configuration.md
+- templates/tasks/bootstrap/front-end/FE-00-04-routing.md
+- templates/tasks/bootstrap/front-end/FE-00-05-design-system.md
+- templates/tasks/bootstrap/front-end/FE-00-06-api-integration.md
+- templates/tasks/bootstrap/front-end/FE-00-07-auth-security.md
+- templates/tasks/bootstrap/front-end/FE-00-08-error-handling.md
+- templates/tasks/bootstrap/front-end/FE-00-09-automated-tests.md
+- templates/tasks/bootstrap/front-end/FE-00-10-docker.md
+- templates/tasks/bootstrap/front-end/FE-00-11-github-actions.md
+- templates/tasks/bootstrap/front-end/FE-00-12-observability.md
+- templates/tasks/bootstrap/front-end/FE-00-13-drawio-diagrams.md
+- templates/tasks/bootstrap/front-end/FE-00-14-final-validation.md
+- templates/tasks/bootstrap/front-end/README.md
+
+4. ARQUIVOS ALTERADOS (26)
+- .gitignore
+- blueprints/README.md
+- devops/README.md
+- devops/docker/README.md
+- devops/docker/testing/README.md
+- devops/docker/testing/commands-plan.md
+- docs/architecture/README.md
+- docs/architecture/diagrams/README.md
+- docs/architecture/diagrams/drawio/README.md
+- docs/architecture/standards/drawio-standard.md
+- docs/devops/README.md
+- docs/devops/github-actions-strategy.md
+- docs/implementation-plans/README.md
+- docs/security/README.md
+- docs/security/proveniencia-documental.md
+- docs/tasks/README.md
+- governance/coding-standards/README.md
+- governance/security/security-baseline.md
+- src/README.md
+- templates/README.md
+- templates/implementation-plans/PLAN-000-bootstrap.md
+- templates/implementation-plans/README.md
+- templates/security-reviews/README.md
+- templates/specifications/SPEC-000-fundacao-tecnica.md
+- templates/specifications/specification-template.md
+- templates/tasks/README.md
+
+5. ARQUIVOS CRIADOS (4)
+- .gitattributes
+- docs/architecture/diagrams/mermaid/gta-brasil-visao.md
+- reports/CLASSIFICACAO-ARQUIVOS-001.md
+- reports/CLASSIFICACAO-REMOCOES-001.md
+
+6. ARQUIVOS PRESERVADOS SEM ALTERAÇÃO
+- .claude/README.md
+- .claude/agents/README.md
+- .claude/commands/README.md
+- .claude/rules/README.md
+- .claude/rules/engineering.md
+- .claude/skills/README.md
+- .codex/README.md
+- .github/agents/README.md
+- .github/copilot-instructions.md
+- .github/instructions/README.md
+- .github/prompts/README.md
+- .github/workflows/README.md
+- .opencode/README.md
+- .opencode/agents/README.md
+- .opencode/commands/README.md
+- .opencode/skills/README.md
+- AGENTS.md
+- CLAUDE.md
+- README.md
+- devops/compose/README.md
+- devops/environments/README.md
+- devops/github-actions/README.md
+- devops/scripts/README.md
+- devops/security/README.md
+- docs/api/README.md
+- docs/architecture/decisions/README.md
+- docs/architecture/dependency-rules.md
+- docs/architecture/diagrams/mermaid/README.md
+- docs/architecture/events.md
+- docs/architecture/gta-brasil-diretrizes.md
+- docs/architecture/papeis-agentes-gta-brasil.md
+- docs/architecture/project-roles.md
+- docs/architecture/standards/README.md
+- docs/devops/infraestrutura-gta-brasil.md
+- docs/integration/README.md
+- docs/o-guia-da-ia-para-devs.pdf
+- docs/operations/README.md
+- docs/operations/db/README.md
+- docs/operations/runbooks/README.md
+- docs/security/ai-security-guidance.md
+- docs/security/independence-audit.md
+- docs/specs/README.md
+- docs/specs/SPEC-001-adaptacao-template-gta-brasil.md
+- docs/tasks/agent-workflow.md
+- docs/technical-debt/README.md
+- docs/testing/README.md
+- docs/testing/integration-database-policy.md
+- governance/agent-policies/README.md
+- governance/agent-policies/agent-engineering-policy.md
+- governance/architecture/README.md
+- governance/architecture/dependency-policy.md
+- governance/quality-gates/README.md
+- governance/quality-gates/quality-gates.md
+- governance/security/README.md
+- reports/AUDITORIA-TEMPLATE-001.md
+- reports/INVENTARIO-TEMPLATE-001.md
+- reports/PLANO-MIGRACAO-TEMPLATE-001.md
+- reports/RELATORIO-GTA-BRASIL-TEMPLATE-001.txt
+- templates/architecture-decisions/README.md
+- templates/architecture-decisions/adr-template.md
+- templates/implementation-plans/implementation-plan-template.md
+- templates/security-reviews/security-review-template.md
+- templates/specifications/README.md
+- templates/specifications/api-contract-template.md
+- templates/tasks/task-template.md
+- templates/test-plans/README.md
+- templates/test-plans/diagram-brief-template.md
+- templates/test-plans/release-checklist-template.md
+- templates/test-plans/runbook-template.md
+- templates/test-plans/technical-debt-template.md
+- templates/test-plans/test-plan-template.md
+- templates/test-plans/test-report-template.md
+- tests/README.md
+
+7. REGRAS ATUAIS
+AGENTS.md e CLAUDE.md centralizam limites; docs/architecture/gta-brasil-diretrizes.md descreve Unreal, C++, Blueprints, mundo inspirado em Canoas, single-player, sistemas e testes futuros. Papéis dos agentes estão em docs/architecture/papeis-agentes-gta-brasil.md. Não foram criadas configurações nativas ativas nem verificadas suas versões. Fluxo de SPEC, plano e autorização foi preservado.
+
+8. DOCKER, TESTES E GIT
+Infraestrutura auxiliar descrita em docs/devops/infraestrutura-gta-brasil.md. Não há Dockerfile ou Compose identificado e Docker não foi executado. Não foram criados C++, .uproject, mapas, assets, serviços, bancos ou pipelines.
+Git foi inicializado localmente porque .git não existia; não há remoto. Git LFS instalado: atributos para futuros .uasset e .umap foram verificados; nenhum asset foi criado e hooks locais não foram instalados. Backup .backup-local/template-antes-finalizacao-002.zip contém 178 arquivos conferidos por SHA-256 sem divergência; é ignorado pelo Git.
+
+9. VALIDAÇÕES E LIMITAÇÕES
+Diretórios principais presentes; verificação automática de links Markdown relativos de documentos operacionais sem destinos ausentes; referências locais em crases verificadas por padrão restrito sem falhas. Busca de padrões selecionados de nomes e termos legados em Markdown operacional identificou apenas uma referência contextual na SPEC; isso não prova ausência de regras incompatíveis. Busca limitada de padrões fortes de segredos nos arquivos candidatos não encontrou ocorrências, sem garantir ausência de todo segredo. Codex, Claude Code e OpenCode têm entradas documentais, mas sintaxes e comportamento reais não foram validados nas respectivas versões. Não foram executados testes da Unreal ou validação Compose pois não há projeto nem configuração executável.
+
+10. PENDÊNCIAS
+Revisão semântica individual integral dos documentos preservados, revisão página a página do PDF se necessária, verificação de direitos do PDF antes de qualquer publicação e validação real dos formatos de agentes. O relatório de classificação não deve ser tomado como prova de homologação. A publicação externa e o desenvolvimento do jogo continuam dependentes de autorização específica.
+Commit local: será registrado após criação; o hash do commit que contém este relatório não pode constar no próprio conteúdo sem mudar esse hash.
+
+Commit local da migração documental: 190bd99497313b3e45f74ff21f6cdc2c5eafacff
+
+12. HOMOLOGAÇÃO FINAL — 2026-11-22
+Resultado: NÃO HOMOLOGADO. A validação real do carregamento das instruções pelos três agentes não foi demonstrada, e Claude Code não foi localizado no PATH.
+Codex: codex.cmd --version retornou codex-cli 0.163.0; --help executou com aviso sobre diretório pessoal. Não foi demonstrado o carregamento de AGENTS.md na sessão de CLI consultada.
+OpenCode: opencode.cmd --version retornou 1.19.0 fora do sandbox; debug config --pure terminou com código 0 sem imprimir configurações. Esse diagnóstico não demonstra que AGENTS.md ou perfis foram carregados. No sandbox houve erro EEXIST no diretório de configuração.
+Claude Code: Get-Command e where.exe não localizaram o comando; versão, carregamento de CLAUDE.md e regras não puderam ser verificados. Os arquivos de instrução são Markdown; não há arquivo de configuração nativa no workspace para validar por esquema.
+Correções: link de estratégia de CI, regras de volumes e testes condicionais, plano de testes Unreal, orientações condicionais de API e integração e opções de diagramas. Não foram instaladas ferramentas, executados Docker ou servidores, nem criados código, projeto Unreal ou assets.
+Verificações: 93 arquivos Markdown operacionais avaliados para links Markdown relativos, sem destinos ausentes; git diff --check sem falhas; busca de arquivos versionados .cpp, .uproject, .uasset, .umap, Dockerfile e Compose sem ocorrências. Isso não prova ausência de todos os problemas semânticos ou de todos os arquivos não versionados.
+Documentos históricos em reports/ registram a migração e podem citar caminhos removidos como evidência histórica; PDF de terceiros e auditoria histórica permanecem ignorados localmente e não constituem instruções operacionais. Licença de redistribuição do PDF continua não verificada.
+
+13. INVENTÁRIO INDIVIDUAL DOS DOCUMENTOS OPERACIONAIS VERSIONADOS
+Cada linha informa o título e SHA-256 do conteúdo examinado nesta execução. Os títulos descrevem o propósito; documentos genéricos são aplicáveis somente quando houver necessidade e autorização. Os hashes são evidência de conteúdo, não prova de carregamento por ferramentas.
+- .claude/README.md | Claude Code | SHA-256 874c5183e621649bfb08c4a8f8f3e3523bf21af80b6c23617bbcc5ce79c92842
+- .claude/agents/README.md | Perfis de agente Claude | SHA-256 d0c0edf7a0a7032f062623021b71b7362581e0ecacc9b6a4bc298d080d007cc9
+- .claude/commands/README.md | Comandos de trabalho | SHA-256 08c4e9dfa7cb5fb8ab3b5f4ffbe3baee568266c7c0934d7ba5109c8ed29189d5
+- .claude/rules/README.md | Regras Claude Code | SHA-256 a848b5c1f66ba1238aa084395589efc450d36126ef64395a60b45f575e8e04ae
+- .claude/rules/engineering.md | Índice de engenharia para Claude Code | SHA-256 24c04bbff8ca1e76e4e06ae1ee94eee5418b83e123c2db3ebda7e29e96998401
+- .claude/skills/README.md | Skills | SHA-256 bea17f8068f0646a4a51f185b882983fac4d80f4db439f6b7056cc0a7314fba3
+- .codex/README.md | Codex | SHA-256 200f428ff1a7756bbd8442f872688a7709c8da39fd991a91f5db56ba7c7561be
+- .github/agents/README.md | Perfis de agente — GitHub Copilot | SHA-256 111540f172059b7b8b7e2d076473d89234cdc29fe5e2b4b3556507dc1fa01600
+- .github/copilot-instructions.md | Instruções para assistentes no GitHub | SHA-256 3890989ba2ca86cf145c11c203d0b15f3619445bd29c6906b666e966ae9b8de5
+- .github/instructions/README.md | Instruções por contexto | SHA-256 e507a5dde5df06db00ce8d93f7c490680837cedab4d51568c952b7bbeb6cf784
+- .github/prompts/README.md | Biblioteca de prompts | SHA-256 66e7d0357a3be67a91140a028ce2727353c424224c2f5d0fc653b551ec029658
+- .github/workflows/README.md | Fluxos de trabalho GitHub Actions — planejamento | SHA-256 96bd7786ac235516471d8a9e1b9ccec31a8f1fbf337ef53ce73e8530a5f43a19
+- .opencode/README.md | OpenCode | SHA-256 760134d14a63086b5fb99689aa0ab86c51598a8797f358d50359efbe846d26fb
+- .opencode/agents/README.md | Agentes OpenCode | SHA-256 32222d4c821d069381c102bafbdd4c527ca2409fbec1d3b5375c35c3ccc3d79f
+- .opencode/commands/README.md | Comandos OpenCode | SHA-256 b6d8ad727164892ce89665a5122b6d0bf8c6abfdcc51ac42dd0278037e2d1853
+- .opencode/skills/README.md | Skills OpenCode | SHA-256 55062ebe0e05f17998cd92d13caa09f6a8b13aea7e23d6b8bb91931d0902c285
+- AGENTS.md | Instruções compartilhadas — GTA Brasil | SHA-256 451b84687f46a8d52ad1336cad5e21aaf17d1f2ada525c35dcb749afb7ec3b15
+- CLAUDE.md | Orientações para Claude Code | SHA-256 3532c1bd86d8d93080de8dea72cf7e3a63083d5a6ad1a6aa881ddfa2dc878eb6
+- README.md | Template de agentes — GTA Brasil | SHA-256 80cfbeb9c6802af3793a67ead95637cbfdac6c227111f1dda808a12fd48d9bc5
+- blueprints/README.md | Referências de arquitetura | SHA-256 4e3c88a4ad17778190c63e54f0e5f2ca23867f85e4fe7095423661995b9f9449
+- devops/README.md | DevOps | SHA-256 a6e5284f9e492c92773cfd97320a38482804112a4a1e9856493cac692385f117
+- devops/compose/README.md | Docker Compose local | SHA-256 3e3922b913265db03a6d8b53b9e216ad8d5d3986a4235ae1e45e4263a100d499
+- devops/docker/README.md | Docker futuro | SHA-256 f44ae50ddaffe4f9b96b47b250f0504a25b8a358440e232984037cbd4392f88a
+- devops/docker/testing/README.md | Testes com serviços auxiliares | SHA-256 48e83f682597add2f12e4f6242d1b995a9acf4ee495f238e6f2cdff10e2b30f7
+- devops/docker/testing/commands-plan.md | Ambiente de teste futuro | SHA-256 c77b362824f58f1dffb7eb67e9f7aebd2b11e426dfb6ff0a48866243a35d1319
+- devops/environments/README.md | Ambientes | SHA-256 22201f7833711175c699398ac2ec9bc696c3847fe0ee752a483597808347d58c
+- devops/github-actions/README.md | GitHub Actions | SHA-256 b6bcbb56d5a5e92e61cd9e8f2b2ec978b9184551e70580c8b7a478aa70f6c7bf
+- devops/scripts/README.md | Scripts operacionais futuros | SHA-256 7a3f05957d46e6f7990fc8a1fd45b197e049319551a83fdeaa144ae952e961de
+- devops/security/README.md | Segurança DevOps | SHA-256 b0b317f8d3f0f029c7a7cdc8444c5c842d3ed57da7cbf22eeb6d9d7f41c47764
+- docs/api/README.md | Documentação de API | SHA-256 66e8ba2975d50eb972d8a04091fd433cced912ca43ffdc888ba2d5978fc77003
+- docs/architecture/README.md | Arquitetura | SHA-256 deb229fb6e5022d40b5cb32df1440262c163a890bb81327181f3fcdbdcbab02b
+- docs/architecture/decisions/README.md | Decisões arquiteturais | SHA-256 a1c615e5410f82cd670b916fc36fe9fe5e21eac7b6b5caca99c272815de2306b
+- docs/architecture/dependency-rules.md | Dependências futuras | SHA-256 2f3d1535f9a6b2a6b9e929d45def595f82943f795bd9f53ac4a369e07d44116c
+- docs/architecture/diagrams/README.md | Diagramas | SHA-256 e305ad2fbc7fa9ad35a2d2355569b281f9bd8af7073b4980f1cf5c092fba6de2
+- docs/architecture/diagrams/drawio/README.md | Draw.io | SHA-256 70a05f937f126aa38836c65b641cd27fea10676ded9fb48fa3d24c9814b36f98
+- docs/architecture/diagrams/mermaid/README.md | Mermaid | SHA-256 48c3b126e1280f4e35eef9b267cb0349e45589bcf6df8b32454482b87eac6e71
+- docs/architecture/diagrams/mermaid/gta-brasil-visao.md | Visão documental do template e do futuro jogo | SHA-256 6375f93d6b887295cf21099e85a1129bef0feca4235a6d3f0b79be1814544f87
+- docs/architecture/events.md | Comunicação entre sistemas de gameplay | SHA-256 d653237f4cc245f54c8e7318879a6fdc41ad0568930a21ae3953204c335a3b41
+- docs/architecture/gta-brasil-diretrizes.md | Diretrizes futuras de arquitetura e mundo | SHA-256 86ed3c8a31ca0a65ead438e8589a655f0a3df2e08d3622e6d8709f0f1a36b980
+- docs/architecture/papeis-agentes-gta-brasil.md | Papéis documentais dos agentes | SHA-256 49ad5570067dbf3151937464f648965bd6674da6a6a04148ef11261b15c7d4cb
+- docs/architecture/project-roles.md | Responsabilidades | SHA-256 2e73f3837d74749c004c6081c4b8aaa0b47d9973625f1da8b4cb45955a949e5b
+- docs/architecture/standards/README.md | Padrões arquiteturais | SHA-256 08140dd34f202df924e34ee07fa79ddd9eb53afb8286c00d3fe6269c6c249dee
+- docs/architecture/standards/drawio-standard.md | Padrão de diagramas | SHA-256 9cb4070f8caf0a78aa11d1a9ccfd4f2871c0d7616c1dea6869845d2ee803abe1
+- docs/devops/README.md | DevOps | SHA-256 6f9f2cc9aa26370ccc3acc69e2c76f10da48afb3919d18ebe369617125362d82
+- docs/devops/github-actions-strategy.md | Automação futura | SHA-256 265df60132edb39011dba1a10e40566855444466d0fdfc7dce54f862b3137e63
+- docs/devops/infraestrutura-gta-brasil.md | Infraestrutura auxiliar futura | SHA-256 52132acf2b4085bdd919f729d0bda28239739faee283b22d23513a7fe19d4584
+- docs/implementation-plans/README.md | Planos de implementação | SHA-256 964f707eec82faaf886ec6964d293934cc099ff74dd9886518ab7f16f021d408
+- docs/integration/README.md | Integrações | SHA-256 aa14ac85e736704a48364768e84b54ed0416de0c60eac5c1c14099615904a9b3
+- docs/operations/README.md | Operações | SHA-256 d14aeb059940b310ae8c8fbf458b2c811fa6ebeb16bafd22b9969f34830dccbf
+- docs/operations/db/README.md | Operações de banco | SHA-256 c6f49d32de2596dad4a9e87b00bf27a5331f6389c891bb2058fdf65dc1b8a564
+- docs/operations/runbooks/README.md | Runbooks | SHA-256 a2fa5edf509857ae6adf9bc52eff3c867e305a74461677756a8abc9b1c533d78
+- docs/security/README.md | Segurança | SHA-256 39111ba3e3b95d69c0dabefa7fb6774993795ec207c6db1069bb23d4aaf068f0
+- docs/security/ai-security-guidance.md | Segurança de integrações com IA | SHA-256 e97c1b640ea7a2617c5860c017f351731a218f3424d03ec0e1358fcc6846a428
+- docs/security/proveniencia-documental.md | Proveniência e direitos | SHA-256 043e936ba8bfc4414f1e8aa11fb1fbce4ae813b942622ff00202a544e15a9c98
+- docs/specs/README.md | Especificações | SHA-256 9e1eed829dd95537af7f6f0e766df4cea3e5a1539296bb41c0fa701b904156cc
+- docs/specs/SPEC-001-adaptacao-template-gta-brasil.md | SPEC-001 — Adaptação documental do template para GTA Brasil | SHA-256 2efa1374d9be957ed63ea55bf395d6f4af00a4fc7d51e18db0574adee2272911
+- docs/tasks/README.md | Tarefas | SHA-256 d9e5c7dcfac52bb4bf5923ecf382d18d74c13b7d1f6609acd01f94d7037ca6d8
+- docs/tasks/agent-workflow.md | Fluxo obrigatório dos agentes | SHA-256 1078ec23255e372b837a156d5c55abdd3b108f977fa060143ffff5ee9fcb554f
+- docs/technical-debt/README.md | Débitos técnicos | SHA-256 a62ae7552a33ba6faba61ae010ab2730447f5bfce28d23a0c5db4a0193fc1c6e
+- docs/testing/README.md | Estratégia de testes futura | SHA-256 0338c32aa48e446c3ae95b20b722f0b9e9b23cb081a672904d7b4f19224bc287
+- docs/testing/integration-database-policy.md | Política de banco descartável para integração | SHA-256 b8a459c53781b1355361876052cb859affd4165ff9257fae79fbb9208e67297d
+- governance/agent-policies/README.md | Políticas dos agentes | SHA-256 bf1591d8e06137328cd3c89670e2b4e87117bcbfb93df24ab77680d5691beda0
+- governance/agent-policies/agent-engineering-policy.md | Política de engenharia assistida por agentes | SHA-256 1a72555e50472a487926dbd3438efac11ee03221922863fb26b56809510c6258
+- governance/architecture/README.md | Governança de arquitetura | SHA-256 593ada5e5c724a20fdb487681ca45cd8417d9fed839c6f01b68267509dcd9390
+- governance/architecture/dependency-policy.md | Política de dependências futuras | SHA-256 3b69278413397d2a8fca2dd6cbf50d5d31a629fdd26f2a4ef9802cffc1fc4803
+- governance/coding-standards/README.md | Padrões de código futuro | SHA-256 16ac1272ff6fa9d9a27e144532dca59c24e2c3f91db74bc50e511fe1430db07d
+- governance/quality-gates/README.md | Quality Gates | SHA-256 3592d547c5e9cd772712f437de000f1eec212095d02b41ee32d0ef4109f28647
+- governance/quality-gates/quality-gates.md | Quality gates | SHA-256 5e70040492ac305770055eea4b8dde533cddedd1ff3101648281120f92d2f17d
+- governance/security/README.md | Governança de segurança | SHA-256 a1823acb55589c9a40fcc6a6b15d89853cef18f87d28ade6df5235f3db18e6c7
+- governance/security/security-baseline.md | Segurança | SHA-256 da54d65bfe603bd6632e5da364ff92c6c0dd2fe351732a3bf3b4c6a8eb0997bc
+- src/README.md | Código futuro | SHA-256 598554900621c4ddc253f649fbde5cdb365edcef07d9d4e318e40c82c97b9c91
+- templates/README.md | Modelos documentais | SHA-256 e1f80bf887b2b510d2b976b74bf28ee270a8adbdde70715556a706e24fa8bd03
+- templates/architecture-decisions/README.md | Modelos de ADR | SHA-256 bc3dc0c56c81f8a7ef70f0aa159ff7f0e9d316f8b0f4f657f11a0238060b7c6c
+- templates/architecture-decisions/adr-template.md | ADR-[NNNN]: [decisão] | SHA-256 22c566fb205a3b11416e5dfc14c98f94cdb62eea8a65638a10ebefce12b9d7c9
+- templates/implementation-plans/PLAN-000-bootstrap.md | PLAN-000 — Fundação futura do jogo | SHA-256 73425c4d938b3d88c07c94a6f777b3a6fa7ffee894a732452661d019a7736639
+- templates/implementation-plans/README.md | Modelos de plano | SHA-256 13b9493ac9d27bd6f095a88da1e668048a7db8d344158a09dd69d49a09985c91
+- templates/implementation-plans/implementation-plan-template.md | Plano de implementação: [título] | SHA-256 f76c9d1dda4e69197f48923c378b20a89012fa0a9db333c89ee29aeadbfa0b3f
+- templates/security-reviews/README.md | Modelos de revisão de segurança | SHA-256 263c69f9505169017acec558148cb8f383f74af30c1835354b0762df8a47b289
+- templates/security-reviews/security-review-template.md | Revisão de segurança: [mudança] | SHA-256 5a944c46949646a018b087760425fd0008df16e4ce0d2a783837999961f5d734
+- templates/specifications/README.md | Modelos de especificação | SHA-256 1028c34a4bd0c966f80e39d3c792f0729cd33576ab71df172d4ba87fef4bfc16
+- templates/specifications/SPEC-000-fundacao-tecnica.md | SPEC-000 — Fundação técnica futura | SHA-256 dbe9540de2ce84c82eeaf9a72360ae9e1fdc3b8990344d16ea30617f28cf158f
+- templates/specifications/api-contract-template.md | Contrato de API: [nome] | SHA-256 ccd3b170f5290d729fc496b8fbfcd0cceb55f0b791579799545a3d39be6c40d0
+- templates/specifications/specification-template.md | SPEC-[ID]: [título] | SHA-256 0a416116116f9eac7ecdf8b64680c354023df70254bfd95b3e8989219e47a5f2
+- templates/tasks/README.md | Modelo de tarefa | SHA-256 63fc01ec152adb9c5d26563aedff5f963d78b968ee346a76c9af17a3637fb81e
+- templates/tasks/task-template.md | [ID] — [objetivo no gerúndio] | SHA-256 2de120a259c07ac20fe6fcc2d3d2c7d0598b17dcdd533a8da709a5dffd55e7a3
+- templates/test-plans/README.md | Modelos de teste | SHA-256 dbaace02c14ec1b8b070936b59b2d3fc126b97d129bb668d1f19ea27ce2884b8
+- templates/test-plans/diagram-brief-template.md | Brief de diagrama: [título] | SHA-256 55c6b93b5d0f9776ade2cc4164e606de52cce05a79198f6a4bcf931065c15839
+- templates/test-plans/release-checklist-template.md | Lista de verificação de publicação: [versão] | SHA-256 94e33199b3df4c4862a49da9ae59c39a54fcb279fea94a29690bba212fa423eb
+- templates/test-plans/runbook-template.md | Runbook: [operação] | SHA-256 a26b33e1b5c636c3bae945938950264e7e973b829b09578ab1a9610a78a585d4
+- templates/test-plans/technical-debt-template.md | Débito técnico: [título] | SHA-256 5540148f89bf1bd3f4a34e6a53f9d59334dba0b0bfb0d49d299b5828898a5711
+- templates/test-plans/test-plan-template.md | Plano de testes: [escopo] | SHA-256 2ec94ec49c0a68510f09d4c3b0c0ef9bac1c6296f154cb78a1e5d0d895e5bef7
+- templates/test-plans/test-report-template.md | Relatório de testes: [execução] | SHA-256 eb46b3a8bc880576e820536c459cc566d036c43aceee6455801da4bbd1dc0af8
+- tests/README.md | Testes futuros | SHA-256 f2ed81c83f55b53b2c4f150cc28ef622e7c9473c354b412d0a41ec1ee2f107f4
+
+14. CORREÇÃO DA SPEC-001 — QUATRO FERRAMENTAS
+Escopo: orientações para Codex CLI, Claude Code, GitHub Copilot CLI e OpenCode. AGENTS.md permanece como fonte central; CLAUDE.md e .github/copilot-instructions.md encaminham para ela. Nenhum jogo, servidor, dependência, mapa ou asset foi criado. As verificações abaixo são locais e não enviaram solicitações a modelos nem acessaram serviços externos.
+
+Codex CLI — PENDENTE de validação operacional completa. Versão local: codex-cli 0.163.0. O diagnóstico `codex debug prompt-input`, executado com acesso ao ambiente do usuário e sem reproduzir conteúdo privado, retornou código 0 e confirmou a presença da nova frase central de AGENTS.md no contexto montado. Essa evidência valida o carregamento no diagnóstico, não uma sessão completa com modelo.
+
+Claude Code — NÃO DISPONÍVEL no PATH desta sessão. Get-Command não localizou claude, claude.cmd ou claude.exe; versão e carregamento de CLAUDE.md e .claude/rules não foram comprovados. A integração documental foi preservada; não houve instalação.
+
+GitHub Copilot CLI — PENDENTE de validação operacional completa. Versão local: 1.0.109. `copilot instruction list` identificou .github/copilot-instructions.md, AGENTS.md, CLAUDE.md e dois arquivos de .claude/rules como fontes que uma sessão carregaria. Isso confirma descoberta pela CLI, não a execução de uma sessão com modelo. A inspeção da árvore .github não encontrou outras configurações nativas além do arquivo de instruções; diretórios de agentes, instruções, prompts e workflows contêm índices Markdown.
+
+OpenCode — PENDENTE de validação operacional completa. Versão local: 1.19.0. `opencode debug config --pure` terminou com código 0, sem mostrar valores de configuração; não comprovou o carregamento de AGENTS.md ou a execução de uma sessão com modelo. No sandbox, a consulta falhou ao acessar o diretório pessoal de configuração; a leitura foi repetida com acesso autorizado.
+
+A frase anterior no histórico deste relatório sobre somente três ferramentas descreve uma fase anterior. As entradas e hashes da seção 13 são um retrato da homologação anterior; arquivos alterados nesta correção terão outros hashes. A presença de ferramentas no PATH, listagem de fontes e diagnóstico não substituem teste operacional em sessão. Não se declara homologação das integrações pendentes nem do template como um todo.
+
+15. VALIDAÇÃO FUNCIONAL CONTROLADA DAS QUATRO FERRAMENTAS
+Ambiente: cópia temporária de AGENTS.md com marcador exclusivo e cópia temporária de .github/copilot-instructions.md com segundo marcador. Os pedidos às CLIs não incluíam os marcadores e solicitavam somente as linhas exigidas, sem uso de ferramentas. Não foi alterado arquivo permanente durante os testes. O teste foi realizado em uma cópia temporária, não no diretório real do repositório; não comprova que instruções específicas do workspace real sejam carregadas da mesma maneira.
+
+Codex CLI 0.163.0 — VALIDADA para aplicação de AGENTS.md no cenário temporário. Comando: codex exec --ephemeral --skip-git-repo-check --sandbox read-only, seguido de solicitação para responder somente com as linhas exigidas pelas instruções temporárias, sem usar ferramentas. Resultado: código 0 e marcador central exato na resposta. Não foi comprovado o carregamento de outros arquivos ou de instruções do workspace real. A inicialização tentou acessar uma integração MCP existente e registrou erro de autenticação; isso não foi necessário ao teste e não prova início de servidor local. A ferramenta de testes foi instruída a não usar ferramentas; a sessão usou sandbox somente leitura.
+
+GitHub Copilot CLI 1.0.109 — PENDENTE. Comando: copilot --no-auto-update --disable-builtin-mcps --disable-client-telemetry --deny-tool shell --deny-tool write -p, seguido da mesma solicitação. Resultado: autenticação recusada por resposta 403 de restrição da conta; sessão sem resposta do modelo. Não houve evidência funcional de aplicação de nenhum dos dois marcadores. A inspeção de fontes relatada na seção 14 não substitui este teste. Uma tentativa anterior falhou por sintaxe de negação e outra por acesso negado no sandbox; não houve repetição após a recusa da conta.
+
+OpenCode 1.19.0 — PENDENTE. Comando: opencode run --pure, com OPENCODE_PERMISSION definido como negação de ferramentas, seguido da mesma solicitação. A sessão exibiu seleção de agente e modelo, mas não retornou resposta durante cerca de 50 segundos; foi interrompida. Nenhum marcador foi observado e a aplicação de AGENTS.md não foi comprovada. Não houve nova tentativa. A saída de versão já verificada e o diagnóstico da seção 14 não substituem teste funcional.
+
+Claude Code — NÃO DISPONÍVEL. Comando: Get-Command claude,claude.cmd,claude.exe. Resultado: nenhum comando encontrado no PATH; versão e carregamento não verificados. A integração documental foi preservada e não houve instalação.
+
+Limpeza: os arquivos temporários de instruções foram removidos; a tentativa de remover a pasta temporária vazia retornou erro de arquivo em uso. Um processo OpenCode foi observado, mas sua associação à pasta não pôde ser confirmada sem acesso aos metadados de processo; ele não foi encerrado por segurança. Não se declara limpeza completa da pasta. Nenhum código ou projeto Unreal foi criado pelo teste. Classificação APTO PARA PLANEJAMENTO E USO COM AS FERRAMENTAS VALIDADAS não é declarada, pois Copilot e OpenCode permanecem pendentes segundo o critério solicitado.
+
+16. NOVA VALIDAÇÃO FUNCIONAL — QUATRO FERRAMENTAS
+Contexto: uma cópia temporária de AGENTS.md recebeu o marcador GTA_CENTRAL_93WJ2; cópia de .github/copilot-instructions.md recebeu GTA_COPILOT_52FK8. Os pedidos às ferramentas não continham esses marcadores e pediam resposta sem usar ferramentas. Os arquivos permanentes do template não foram alterados durante as sessões. O cenário foi uma cópia temporária, não o repositório real.
+
+Codex CLI 0.163.0 — VALIDADA no cenário temporário. Comando: codex exec --ignore-user-config --ephemeral --skip-git-repo-check --sandbox read-only, com pedido para responder apenas conforme instruções temporárias e não usar ferramentas. Código 0; a resposta incluiu exatamente GTA_CENTRAL_93WJ2. A configuração pessoal foi ignorada para evitar iniciar integrações previamente observadas. Este teste comprova a aplicação de AGENTS.md na cópia, não em todos os cenários possíveis.
+
+GitHub Copilot CLI 1.0.109 — PENDENTE. Comando: copilot --no-auto-update --disable-builtin-mcps --disable-client-telemetry --deny-tool shell --deny-tool write -p, com pedido equivalente e atualizações automáticas desativadas. A conta recebeu resposta 403 de autenticação; nenhum marcador foi produzido. Não houve nova tentativa após essa resposta; não há comprovação funcional nem das instruções compartilhadas nem das nativas.
+
+OpenCode 1.19.0 — PENDENTE. A inspeção de configuração local com debug config --pure não identificou integrações MCP configuradas. Comando de sessão: opencode run --pure, com OPENCODE_PERMISSION negando ferramentas, seguido do pedido equivalente. A sessão selecionou agente e modelo, mas não retornou marcador em cerca de 40 segundos e foi interrompida. Não se comprovou aplicação de AGENTS.md nem se repetiu a sessão após a interrupção.
+
+Claude Code — NÃO DISPONÍVEL no PATH. Comando: Get-Command claude,claude.cmd,claude.exe. Nenhum executável encontrado; versão e aplicação de instruções não verificadas. Nenhuma instalação foi executada.
+
+Limpeza e limites: os arquivos temporários foram removidos; a pasta temporária vazia não pôde ser removida por estar em uso. Não foi identificado com segurança o processo que a mantém aberta, e nenhum processo alheio foi encerrado. Nenhum serviço foi iniciado deliberadamente nem foi criado código, projeto Unreal ou asset. O resultado continua não atendendo à condição para declarar o template APTO PARA PLANEJAMENTO E USO COM AS FERRAMENTAS VALIDADAS, pois Copilot e OpenCode permanecem pendentes; Claude não bloqueia essa condição, conforme solicitado.
+
+17. ENCERRAMENTO DOCUMENTAL E HOMOLOGAÇÃO OPERACIONAL PARCIAL
+
+Migração documental: ENCERRADA por decisão expressa do usuário. As seções anteriores preservam o histórico das revisões, inclusive suas limitações; o encerramento não acrescenta evidência retroativa de testes ou de revisão integral. O template pode apoiar o planejamento do jogo com ferramentas efetivamente disponíveis, observadas as condições abaixo. A implementação futura dependerá de autorização e validação específica das ferramentas escolhidas.
+
+Homologação operacional: PARCIAL. Não há homologação integral das quatro ferramentas, nem comprovação de funcionamento de todas no workspace real.
+
+Ferramentas disponíveis nas verificações anteriores:
+- Codex CLI 0.163.0: VALIDADO EM AMBIENTE TEMPORÁRIO. A resposta reproduziu o marcador de AGENTS.md na cópia temporária; carregamento e aplicação no workspace real permanecem pendentes de validação específica.
+- GitHub Copilot CLI 1.0.109: BLOQUEADO POR RESTRIÇÃO DE AUTENTICAÇÃO 403. A integração documental permanece preservada; não foram repetidas tentativas nesta etapa.
+- OpenCode 1.19.0: PENDENTE. A sessão não produziu resposta no tempo observado. É necessário diagnóstico específico; a causa não foi determinada.
+- Claude Code: NÃO DISPONÍVEL no PATH das verificações anteriores. A integração documental permanece preservada; não foi instalado.
+
+Bloqueios externos e pendências não resolvidas: restrição de autenticação do Copilot; diagnóstico e teste funcional do OpenCode; disponibilidade e homologação operacional do Claude Code; validação do Codex no workspace real; verificação dos direitos de redistribuição do PDF de terceiros. As pastas temporárias vazias mencionadas nas seções anteriores não tiveram sua limpeza confirmada. Não foram repetidos auditoria integral, testes funcionais, instalação de ferramentas ou mudanças em configurações globais nesta etapa.
