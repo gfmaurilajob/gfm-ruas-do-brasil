@@ -1,5 +1,8 @@
 # Instruções para GitHub Copilot CLI
 
+> Documento histórico. GitHub Copilot CLI está fora do escopo operacional e das
+> obrigações de homologação desta fase. Preservar apenas como referência.
+
 Siga `AGENTS.md`, o fluxo em `governance/agent-policies/fluxo-obrigatorio.md` e as
 diretrizes futuras em `docs/architecture/gta-brasil-diretrizes.md`.
 

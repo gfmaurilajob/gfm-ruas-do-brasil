@@ -23,6 +23,9 @@ Build/
 *.pfx
 secrets/
 
+# Claude Code (override pessoal; nunca versionar)
+**/.claude/settings.local.json
+
 # Backups e temporários locais
 .backup-local/
 *.tmp

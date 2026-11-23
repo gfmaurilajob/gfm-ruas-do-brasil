@@ -1,0 +1,230 @@
+================================================================================
+RELATÓRIO — GFM — RUAS DO BRASIL — INTEGRAÇÃO DOCUMENTAL DO CLAUDE CODE
+ID: RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001
+================================================================================
+Data: 2026-11-23
+Idioma: pt-BR
+Executor: agente ORCHESTRATOR (coordenação documental)
+Diretório: C:\Work\dev\veyloq\GTABrasil
+Repositório: https://github.com/gfmaurilajob/gfm-ruas-do-brasil.git
+Branch: main
+HEAD de auditoria: a8b5f2ea0c0be66ef589b2a80995d80cbc346691
+Mensagem de commit definida: chore: prepara integracao futura do Claude Code
+Referência histórica: reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt
+Fase: infraestrutura de IA e planejamento. Não existe jogo, protótipo, projeto
+Unreal, código C++, Blueprint, mapa, personagem ou asset nesta execução.
+
+--------------------------------------------------------------------------------
+1. OBJETIVO
+--------------------------------------------------------------------------------
+Preparar a integração documental futura do Claude Code preservando as definições
+canônicas do projeto, sem instalar ferramentas, autenticar contas, criar hooks,
+permissões amplas, integrações externas, dependências, código do jogo ou
+infraestrutura.
+
+Manter OpenCode e Codex CLI como ferramentas operacionais principais. Remover o
+GitHub Copilot CLI das obrigações de homologação e dos fluxos futuros, preservando
+suas referências históricas.
+
+--------------------------------------------------------------------------------
+2. DECISÕES
+--------------------------------------------------------------------------------
+D1  `AGENTS.md` permanece como fonte superior; `CLAUDE.md` e `.claude/README.md`
+    apenas encaminham e resumem limites.
+D2  As definições nativas em `.opencode/agents/`, `.opencode/commands/` e
+    `.agents/skills/` não foram alteradas.
+D3  Adaptadores em `.claude/` apontam para as fontes canônicas; não duplicam
+    conteúdo nem criam uma segunda autoridade documental.
+D4  `.claude/settings.json` é compartilhável, mínimo e não contém hooks,
+    `mcpServers`, plugins, autenticação ou chaves de API.
+D5  `.claude/settings.local.json` é pessoal e foi adicionado ao `.gitignore`.
+D6  Claude Code é classificado como INTEGRAÇÃO DOCUMENTAL PREPARADA, NÃO
+    HOMOLOGADA OPERACIONALMENTE.
+D7  GitHub Copilot CLI é referência histórica; `.github/copilot-instructions.md`
+    foi preservado e recebeu apenas aviso de escopo.
+
+--------------------------------------------------------------------------------
+3. FONTES OFICIAIS CONSULTADAS
+--------------------------------------------------------------------------------
+- https://code.claude.com/docs/en/sub-agents
+- https://code.claude.com/docs/en/settings
+- https://code.claude.com/docs/en/skills
+
+Convenções aplicadas:
+- subagentes: Markdown em `.claude/agents/` com frontmatter YAML; `name` e
+  `description` obrigatórios; `tools` restrito a leitura;
+- comandos: arquivos em `.claude/commands/` continuam funcionando mesmo após a
+  mesclagem de comandos customizados em skills; foram mantidos como comandos
+  manuais com `description`, `argument-hint` e `$ARGUMENTS`;
+- skills: adaptadores em `.claude/skills/<nome>/SKILL.md` apontam para a skill
+  canônica em `.agents/skills/<nome>/SKILL.md`;
+- configuração: precedência local sobre compartilhada; nenhuma presunção de
+  carregamento sem verificação em sessão real.
+
+--------------------------------------------------------------------------------
+4. ESTRUTURA ENTREGUE
+--------------------------------------------------------------------------------
+Agentes Claude: 12 arquivos em `.claude/agents/*.md`:
+  orchestrator, architect, gameplay-designer, world-designer, ai-engineer,
+  implementer, tester-qa, reviewer, security-reviewer, devops-build,
+  documentation, performance-engineer.
+
+Comandos Claude: 9 arquivos em `.claude/commands/*.md`:
+  analisar-requisitos, auditoria-qualidade, criar-spec, gerar-relatorio-ciclo,
+  planejar-funcionalidade, revisar-arquitetura, revisar-seguranca,
+  validar-documentacao, verificar-prontidao.
+
+Skills Claude: 14 adaptadores em `.claude/skills/*/SKILL.md`:
+  brainstorming, context-degradation, context-fundamentals, context-optimization,
+  executing-plans, finishing-a-development-branch, receiving-code-review,
+  requesting-code-review, subagent-driven-development, systematic-debugging,
+  test-driven-development, using-git-worktrees, verification-before-completion,
+  writing-plans.
+
+Configuração e documentação:
+  .claude/settings.json
+  .claude/README.md
+  CLAUDE.md
+  docs/operations/claude-code-integration.md
+  .gitignore com **/.claude/settings.local.json
+
+--------------------------------------------------------------------------------
+5. ADAPTAÇÃO DE AGENTES
+--------------------------------------------------------------------------------
+Cada adaptador declara `name`, `description` e `tools: Read, Glob, Grep`.
+Todos leem `AGENTS.md`, `CLAUDE.md` e o papel canônico correspondente em
+`.opencode/agents/`. Nenhum adaptador concede escrita, shell, subagentes, MCP ou
+automação.
+
+O papel `implementer` permanece explicitamente BLOQUEADO nesta fase documental.
+
+--------------------------------------------------------------------------------
+6. ADAPTAÇÃO DE COMANDOS
+--------------------------------------------------------------------------------
+Cada comando declara `description`, `argument-hint`, `$ARGUMENTS`,
+`allowed-tools: Read, Glob, Grep` e `disable-model-invocation: true`, mantendo o
+acionamento sob demanda. Todos apontam para o comando canônico em
+`.opencode/commands/` e para o papel associado.
+
+Nenhum comando cria código, asset, infraestrutura, migration, PR ou deploy.
+
+--------------------------------------------------------------------------------
+7. ADAPTAÇÃO DE SKILLS
+--------------------------------------------------------------------------------
+As 14 skills canônicas foram preservadas sem alteração de conteúdo. Cada adaptador
+declara `name`, `description` e `allowed-tools: Read, Glob, Grep`, e instrui a ler
+a fonte canônica antes de agir.
+
+Skills orientadas a implementação receberam restrição explícita: nesta fase,
+produzem apenas planejamento, critérios verificáveis ou diagnóstico documental.
+
+--------------------------------------------------------------------------------
+8. CONFIGURAÇÃO E SEGURANÇA
+--------------------------------------------------------------------------------
+Permissões compartilhadas: leitura dentro do repositório e comandos Git
+somente leitura. Comandos potencialmente destrutivos foram negados. Gravações
+permanecem sujeitas ao fluxo normal de confirmação do Claude Code.
+
+Não foram criados:
+- hooks executáveis;
+- `.mcp.json`, servidores MCP ou plugins;
+- `.claude/settings.local.json`;
+- tokens, credenciais, `.env`, chaves privadas ou integrações externas;
+- código C++, Blueprints, projeto Unreal, assets, mapas, gameplay;
+- Dockerfile, Compose, pipeline novo ou dependências.
+
+A origem `C:\Work\dev\GTABrasil` permaneceu somente leitura e não foi modificada.
+
+--------------------------------------------------------------------------------
+9. VALIDAÇÕES EXECUTADAS
+--------------------------------------------------------------------------------
+| ID | Validação/comando | Resultado | Evidência sanitizada |
+|---|---|---|---|
+| V1 | `git status --short --branch`, `git rev-parse HEAD`, `git remote -v` | APROVADO | `## main...origin/main`; HEAD `a8b5f2e`; remoto correto |
+| V2 | `Get-Command claude` | AUSENTE | `CLAUDE_PATH: ausente` |
+| V3 | Contagem de adaptadores | APROVADO | `CLAUDE_AGENTS: 12`, `CLAUDE_COMMANDS: 9`, `CLAUDE_SKILLS: 14` |
+| V4 | Forward references canônicas | APROVADO | validador exige `.opencode/agents/`, `.opencode/commands/` e `.agents/skills/` nos adaptadores |
+| V5 | JSON de configuração | APROVADO | `.claude/settings.json` analisado; sem `hooks` e sem `mcpServers` |
+| V6 | Ignore de configuração local | APROVADO | `.gitignore` contém `**/.claude/settings.local.json` |
+| V7 | Referências locais em Markdown | APROVADO | link checker do validador |
+| V8 | Segredos, código de jogo, assets e build indevidos | APROVADO | varredura do validador estrutural |
+| V9 | `pwsh -File ./.github/scripts/validate-structure.ps1` | APROVADO | EXIT=0; `OK: validacao estrutural aprovada (agentes=12, comandos=9, skills=14, claude-agentes=12, claude-comandos=9, claude-skills=14)` |
+
+--------------------------------------------------------------------------------
+10. VALIDAÇÕES NÃO EXECUTADAS
+--------------------------------------------------------------------------------
+- Instalação de Claude Code.
+- Autenticação, assinatura, chave de API ou configuração de conta.
+- Execução de `/status`, `/agents`, `/skills` ou qualquer comando Claude.
+- Acionamento real de subagentes ou skills pelo Claude Code.
+- Reexecução de Codex CLI, OpenCode ou Copilot CLI nesta execução.
+- GitHub Actions desta revisão no momento da redação; execução automática esperada
+  após o push.
+- Qualquer implementação de jogo, infraestrutura ou automação.
+
+--------------------------------------------------------------------------------
+11. PENDÊNCIAS E RISCOS RESIDUAIS
+--------------------------------------------------------------------------------
+- Claude Code precisa ser instalado e executado em sessão dedicada para validar
+  carregamento real de agentes, comandos, skills e configurações.
+- Comandos declarados com `disable-model-invocation: true` exigem acionamento
+  manual `/nome`; isso é intencional para manter carregamento sob demanda.
+- Recursos específicos de versão podem variar; a documentação oficial foi
+  consultada, mas nenhuma versão local foi verificada.
+- Histórico Git anterior reescrito por processo externo permanece como contexto
+  histórico; nenhuma reescrita foi realizada nesta execução.
+- GitHub Copilot CLI permanece bloqueado por causa externa conhecida; isso não
+  impacta mais o escopo operacional do projeto.
+
+--------------------------------------------------------------------------------
+12. ARQUIVOS CRIADOS
+--------------------------------------------------------------------------------
+- `.claude/agents/*.md` (12 adaptadores)
+- `.claude/commands/*.md` (9 adaptadores)
+- `.claude/skills/*/SKILL.md` (14 adaptadores)
+- `.claude/settings.json`
+- `docs/operations/claude-code-integration.md`
+- `reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt`
+
+--------------------------------------------------------------------------------
+13. ARQUIVOS ALTERADOS
+--------------------------------------------------------------------------------
+- `CLAUDE.md`
+- `.claude/README.md`
+- `.gitignore`
+- `README.md`
+- `README-ia.md`
+- `.github/copilot-instructions.md`
+- `docs/operations/README.md`
+- `.github/scripts/validate-structure.ps1`
+
+--------------------------------------------------------------------------------
+14. ARQUIVOS PRESERVADOS
+--------------------------------------------------------------------------------
+- `.opencode/agents/*.md`
+- `.opencode/commands/*.md`
+- `.agents/skills/*/SKILL.md`
+- `AGENTS.md`, `governance/`, `docs/architecture/`, `templates/`
+- `ATTRIBUTION.md`, licenças e `docs/referencias/veyloq/`
+- relatórios anteriores
+- origem `C:\Work\dev\GTABrasil`
+
+--------------------------------------------------------------------------------
+15. CONCLUSÃO
+--------------------------------------------------------------------------------
+A integração documental do Claude Code foi preparada e validada estruturalmente.
+Classificação: APROVADO PARA INTEGRAÇÃO DOCUMENTAL; NÃO HOMOLOGADO
+OPERACIONALMENTE.
+
+OpenCode e Codex CLI permanecem como ferramentas principais. Claude Code é
+complementar e somente poderá ser homologado após execução real em sessão
+dedicada, com evidências registradas em novo relatório. GitHub Copilot CLI ficou
+fora do escopo operacional, com referências históricas preservadas.
+
+Nenhuma implementação de jogo, infraestrutura, dependência ou automação foi
+autorizada por este ciclo. A implementação exige autorização específica posterior
+e aprovação do fluxo de governança.
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================

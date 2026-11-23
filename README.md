@@ -41,12 +41,18 @@ O desenvolvimento será orientado por uma arquitetura modular, documentação t�
 | Blueprints | Programação visual e integração de sistemas |
 | Git | Versionamento |
 | GitHub | Repositório e colaboração |
-| Codex CLI | Assistência ao desenvolvimento |
-| OpenCode | Orquestração e execução assistida |
-| GitHub Copilot CLI | Apoio ao desenvolvimento |
-| Claude Code | Ferramenta complementar de IA |
+| Codex CLI | Assistência ao desenvolvimento (principal) |
+| OpenCode | Orquestração e execução assistida (principal) |
+| GitHub Copilot CLI | Referência histórica; fora do escopo operacional atual |
+| Claude Code | Ferramenta complementar; integração documental preparada, não homologada |
 
 A utilização operacional das ferramentas depende de disponibilidade, configuração e homologação.
+
+### Estado das ferramentas de IA
+
+- OpenCode e Codex CLI: ferramentas principais, com homologação operacional parcial e evidências registradas.
+- Claude Code: adaptadores documentais preparados em `.claude/`; não instalado nem testado neste ambiente.
+- GitHub Copilot CLI: não faz parte das obrigações de homologação nem dos fluxos futuros; apenas referência histórica.
 
 ## 🤖 Desenvolvimento orientado por IA
 
@@ -98,6 +104,8 @@ Os principais componentes previstos incluem:
 - **docs/:** especificações, decisões arquiteturais e documentação.
 - **.agents/skills/:** habilidades reutilizáveis.
 - **.opencode/:** configurações de agentes e comandos, quando homologadas.
+- **.claude/:** adaptadores documentais opcionais para Claude Code.
+- **docs/operations/:** guias operacionais documentais.
 - **templates/:** modelos de documentação e planejamento.
 - **reports/:** relatórios de execução e validação.
 - **kits/ e bundles/:** referências e métodos complementares.
@@ -134,10 +142,12 @@ A implementação dessas funcionalidades dependerá das próximas definições d
 
 ### Estado da homologação
 
-A infraestrutura de IA está consolidada, com validação estrutural local via
-`.github/workflows/validate-structure.yml`. A homologação operacional é parcial e
-baseada em evidências reais; publicação no GitHub pode estar bloqueada por
-autenticação. Detalhes em `reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.
+A infraestrutura de IA está consolidada, com validação estrutural local e no GitHub via
+`.github/workflows/validate-structure.yml`. A homologação operacional é parcial e baseada em
+evidências reais: OpenCode e Codex CLI foram executados; Claude Code foi apenas preparado
+documentalmente; GitHub Copilot CLI é referência histórica e está fora do escopo atual.
+Detalhes em `reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt` e
+`reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt`.
 Este projeto ainda não possui jogo, protótipo funcional ou implementação de gameplay.
 
 ## 🗺️ Roadmap
@@ -146,7 +156,7 @@ Este projeto ainda não possui jogo, protótipo funcional ou implementação de 
 |---|---|---|
 | 01 | Definição da identidade do projeto | Definida |
 | 02 | Consolidação da arquitetura de IA | Em preparação |
-| 03 | Homologação dos agentes e ferramentas | Pendente |
+| 03 | Homologação dos agentes e ferramentas | Parcial |
 | 04 | Definição dos requisitos do jogo | Pendente |
 | 05 | Planejamento arquitetural UE5 | Pendente |
 | 06 | Preparação do ambiente de desenvolvimento | Pendente |

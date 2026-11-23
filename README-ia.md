@@ -12,10 +12,12 @@ skills, comandos, templates, segurança, qualidade e rastreabilidade.
 ## Pontos de entrada
 
 - `AGENTS.md` — regras superiores compartilhadas (enxuto). Fonte central para
-  OpenCode, Codex CLI, GitHub Copilot CLI e Claude Code.
-- `CLAUDE.md`, `.github/copilot-instructions.md`, `.codex/README.md`,
-  `.claude/README.md` — encaminham para `AGENTS.md` (adaptações documentais; a
-  presença não comprova carregamento operacional).
+  OpenCode, Codex CLI e Claude Code. GitHub Copilot CLI permanece apenas como
+  referência histórica, fora do escopo operacional atual.
+- `CLAUDE.md`, `.codex/README.md`, `.claude/README.md` — encaminham para
+  `AGENTS.md` (adaptações documentais; a presença não comprova carregamento
+  operacional). `.github/copilot-instructions.md` é preservado como documento
+  histórico.
 
 ## Estrutura
 
@@ -28,6 +30,11 @@ skills, comandos, templates, segurança, qualidade e rastreabilidade.
 | `.opencode/agents/` | 12 papéis nativos do OpenCode (carregamento sob demanda) |
 | `.opencode/commands/` | Comandos documentais de planejamento e validação (não destrutivos) |
 | `.agents/skills/` | 14 skills reutilizáveis (Superpowers + engenharia de contexto) |
+| `.claude/agents/` | 12 adaptadores documentais de subagentes para Claude Code |
+| `.claude/commands/` | 9 adaptadores documentais de comandos para Claude Code |
+| `.claude/skills/` | 14 adaptadores que apontam para as skills canônicas |
+| `.claude/settings.json` | Configuração compartilhada mínima, sem hooks/MCP/plugins |
+| `docs/operations/claude-code-integration.md` | Guia operacional da integração documental Claude |
 | `reports/` | Relatórios de ciclo e evidências de homologação |
 | `src/`, `tests/`, `blueprints/`, `devops/` | Diretórios reservados documentais (sem código/infra nesta fase) |
 | `kits/`, `bundles/`, `agents/`, `commands/` | Catálogo e licenças do pacote VEYLOQ |
@@ -55,8 +62,13 @@ operacional é parcial: depende de execução real das ferramentas e de autentic
 válida. Não declarar compatibilidade não testada.
 
 Evidências, classificações e pendências externas:
-`reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt`.
+`reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt` e
+`reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt`.
 
-Limitações: GitHub (conta suspensa/403) bloqueia publicação; Claude Code não está
-instalado; descoberta de skills/comandos do OpenCode depende de sessão operacional.
-Fase atual: infraestrutura de IA e planejamento. Não há jogo nem protótipo funcional.
+Ferramentas: OpenCode e Codex CLI são as principais; Claude Code teve integração
+documental preparada, mas não foi instalado nem testado; GitHub Copilot CLI está
+fora do escopo operacional e suas referências são históricas.
+
+Limitação residual: descoberta de skills/comandos do OpenCode depende de sessão
+operacional. Fase atual: infraestrutura de IA e planejamento. Não há jogo nem
+protótipo funcional.

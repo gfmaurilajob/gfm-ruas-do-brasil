@@ -23,8 +23,11 @@ $required = @(
   'docs/architecture/gta-brasil-diretrizes.md',
   'docs/architecture/papeis-agentes-gta-brasil.md',
   'templates/test-plans/test-report-template.md',
+  'docs/operations/claude-code-integration.md',
   'reports/RELATORIO-GTA-BRASIL-ESTRUTURA-IA-001.txt',
   'reports/RELATORIO-GTA-BRASIL-HOMOLOGACAO-FINAL-001.txt',
+  'reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt',
+  '.claude/settings.json',
   '.opencode/README.md',
   '.codex/README.md',
   '.github/copilot-instructions.md',
@@ -66,6 +69,56 @@ foreach ($skill in $skills) {
     Assert-Condition ($text -match '(?m)^name:') "name ausente: skill $($skill.Name)"
   }
 }
+
+$claudeAgents = @(Get-ChildItem -LiteralPath (Join-Path $Root '.claude/agents') -Filter '*.md' -File -ErrorAction SilentlyContinue)
+Assert-Condition ($claudeAgents.Count -eq 12) "Agentes Claude: $($claudeAgents.Count) (esperado 12)"
+foreach ($agent in $claudeAgents) {
+  $text = Get-Content -LiteralPath $agent.FullName -Raw
+  Assert-Condition ($text -match '(?m)^---\s*$') "Frontmatter ausente: agente Claude $($agent.Name)"
+  Assert-Condition ($text -match '(?m)^name:') "name ausente: agente Claude $($agent.Name)"
+  Assert-Condition ($text -match '(?m)^description:') "description ausente: agente Claude $($agent.Name)"
+  Assert-Condition ($text -match '(?m)^tools:') "tools ausente: agente Claude $($agent.Name)"
+  Assert-Condition ($text -match '\.opencode/agents/') "Referencia canonica ausente: agente Claude $($agent.Name)"
+}
+
+$claudeCommands = @(Get-ChildItem -LiteralPath (Join-Path $Root '.claude/commands') -Filter '*.md' -File -ErrorAction SilentlyContinue)
+Assert-Condition ($claudeCommands.Count -eq 9) "Comandos Claude: $($claudeCommands.Count) (esperado 9)"
+foreach ($command in $claudeCommands) {
+  $text = Get-Content -LiteralPath $command.FullName -Raw
+  Assert-Condition ($text -match '(?m)^---\s*$') "Frontmatter ausente: comando Claude $($command.Name)"
+  Assert-Condition ($text -match '(?m)^description:') "description ausente: comando Claude $($command.Name)"
+  Assert-Condition ($text -match '(?m)^argument-hint:') "argument-hint ausente: comando Claude $($command.Name)"
+  Assert-Condition ($text -match '\$ARGUMENTS') "ARGUMENTS ausente: comando Claude $($command.Name)"
+  Assert-Condition ($text -match '\.opencode/commands/') "Referencia canonica ausente: comando Claude $($command.Name)"
+}
+
+$claudeSkills = @(Get-ChildItem -LiteralPath (Join-Path $Root '.claude/skills') -Directory -ErrorAction SilentlyContinue)
+Assert-Condition ($claudeSkills.Count -eq 14) "Skills Claude: $($claudeSkills.Count) (esperado 14)"
+foreach ($skill in $claudeSkills) {
+  $skillFile = Join-Path $skill.FullName 'SKILL.md'
+  Assert-Condition (Test-Path -LiteralPath $skillFile) "SKILL.md ausente: skill Claude $($skill.Name)"
+  if (Test-Path -LiteralPath $skillFile) {
+    $text = Get-Content -LiteralPath $skillFile -Raw
+    Assert-Condition ($text -match '(?m)^name:') "name ausente: skill Claude $($skill.Name)"
+    Assert-Condition ($text -match '(?m)^description:') "description ausente: skill Claude $($skill.Name)"
+    Assert-Condition ($text -match '\.agents/skills/') "Referencia canonica ausente: skill Claude $($skill.Name)"
+  }
+}
+
+$settingsPath = Join-Path $Root '.claude/settings.json'
+if (Test-Path -LiteralPath $settingsPath) {
+  try {
+    $settings = Get-Content -LiteralPath $settingsPath -Raw | ConvertFrom-Json
+    Assert-Condition ($null -ne $settings.permissions) 'permissions ausente em .claude/settings.json'
+    Assert-Condition ($settings.PSObject.Properties.Name -notcontains 'hooks') 'hooks nao permitido em .claude/settings.json'
+    Assert-Condition ($settings.PSObject.Properties.Name -notcontains 'mcpServers') 'mcpServers nao permitido em .claude/settings.json'
+  } catch {
+    $script:failures += "JSON invalido: .claude/settings.json"
+  }
+}
+
+$gitignoreText = Get-Content -LiteralPath (Join-Path $Root '.gitignore') -Raw
+Assert-Condition ($gitignoreText -match [regex]::Escape('**/.claude/settings.local.json')) '.gitignore sem ignore de .claude/settings.local.json'
 
 $agentsText = Get-Content -LiteralPath (Join-Path $Root 'AGENTS.md') -Raw
 Assert-Condition ($agentsText.Length -le 5120) "AGENTS.md excede 5 KB ($($agentsText.Length) bytes)"
@@ -111,8 +164,15 @@ $linkPatterns = @(
   '.codex/README.md',
   '.github/copilot-instructions.md',
   '.claude/README.md',
+  '.claude/agents/*.md',
+  '.claude/commands/*.md',
+  '.claude/skills/*/SKILL.md',
+  '.claude/settings.json',
   'governance/agent-policies/fluxo-obrigatorio.md',
   'docs/tasks/agent-workflow.md',
+  'docs/operations/README.md',
+  'docs/operations/claude-code-integration.md',
+  'reports/RELATORIO-GTA-BRASIL-INTEGRACAO-CLAUDE-001.txt',
   'docs/referencias/veyloq/README.md'
 )
 $linkFiles = @(foreach ($pattern in $linkPatterns) { Get-Item -Path (Join-Path $Root $pattern) -ErrorAction SilentlyContinue })
@@ -139,7 +199,7 @@ foreach ($file in $linkFiles) {
 }
 
 if ($failures.Count -eq 0) {
-  "OK: validacao estrutural aprovada (agentes=$($agents.Count), comandos=$($commands.Count), skills=$($skills.Count))"
+  "OK: validacao estrutural aprovada (agentes=$($agents.Count), comandos=$($commands.Count), skills=$($skills.Count), claude-agentes=$($claudeAgents.Count), claude-comandos=$($claudeCommands.Count), claude-skills=$($claudeSkills.Count))"
   exit 0
 }
 
