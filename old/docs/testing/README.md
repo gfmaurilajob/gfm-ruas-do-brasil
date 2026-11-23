@@ -1,3 +1,0 @@
-# Estratégia de testes futura
-
-Cada tarefa de código avalia testes de unidade, integração, funcionalidade, regressão e desempenho conforme o risco. Para Unreal, avaliar recursos nativos de automação e testes de gameplay compatíveis com a versão escolhida; cobrir fluxo positivo, falhas e casos de limite relevantes. Testar salvamento, trânsito, missões e streaming quando existirem comportamentos implementados. Usar dados sintéticos e evidências reproduzíveis. Não presumir banco ou container; quando necessários, usar recursos descartáveis explicitamente identificados, sem afetar dados persistentes. Registrar testes não executados e motivos. Nenhum teste do jogo existe ou foi executado nesta etapa.
